@@ -1,0 +1,16 @@
+{
+  "_comment": "D6 frozen-baseline pilot: ai/02_foundational_rl. Run BEFORE OPD/GRPO so the audit comparison has a sensible lower bound.",
+  "goal_domain": "ai",
+  "goal_name": "02_foundational_rl",
+  "dataset_base": "projects/d6_grant_proposal/dataset",
+  "data_base": "projects/d6_grant_proposal/data",
+  "log_path": "projects/d6_grant_proposal/runs/2026_04_30_pilot_foundrl_baseline",
+  "model_name": "Qwen/Qwen3-30B-A3B",
+  "n_eval_plans": 8,
+  "max_tokens": 8192,
+  "temperature": 1.0,
+  "top_p": 0.95,
+  "grader_max_tokens": 8192,
+  "grader_temperature": 0.0,
+  "seed": 42
+}

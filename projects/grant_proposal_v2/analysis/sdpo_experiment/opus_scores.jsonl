@@ -1,0 +1,3 @@
+{"tag": "C2_B4_scores_only", "qwen": 0.855, "depth": 5, "methods": 5, "feasibility": 5, "grounding": 4, "total": 19, "eval_date": "2026-04-22", "eval_prompt": "standardized_depth_audit_v2_1to10", "scale": "1-10, total /40"}
+{"tag": "C3_sdpo_scores_only", "qwen": 0.97, "depth": 4, "methods": 3, "feasibility": 4, "grounding": 2, "total": 13, "eval_date": "2026-04-22", "eval_prompt": "standardized_depth_audit_v2_1to10", "scale": "1-10, total /40"}
+{"tag": "C4_aggregate_scores_only", "qwen": 0.94, "depth": 4, "methods": 3, "feasibility": 4, "grounding": 4, "total": 15, "eval_date": "2026-04-22", "eval_prompt": "standardized_depth_audit_v2_1to10", "scale": "1-10, total /40"}

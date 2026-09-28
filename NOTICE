@@ -1,0 +1,13 @@
+This repository contains training code whose structure is adapted from the
+tinker-cookbook project by Thinking Machines Lab
+(https://github.com/thinking-machines-lab/tinker-cookbook, baseline commit 00c8589),
+in particular tinker_cookbook/recipes/rl_loop.py (e.g. the chz Config and GRPO
+training loop in src/co_scientist/rubric_reward/grpo/best_ver.py and trainers
+derived from it). The code also imports tinker_cookbook as a library dependency.
+
+tinker-cookbook is licensed under the Apache License, Version 2.0; a copy is
+provided in THIRD_PARTY_NOTICES/tinker-cookbook-LICENSE.
+
+The research task and rubric-reward method follow "Training AI Co-Scientists
+Using Rubric Rewards" (Goel et al., arXiv:2512.23707). The dataset
+facebook/research-plan-gen is not redistributed here.

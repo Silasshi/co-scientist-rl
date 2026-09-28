@@ -1,0 +1,47 @@
+flowchart TD
+    Iter([Iter idx])
+    Ckpt[Save checkpoint?<br/>train_opd.py:349-357]:::infra
+    Wts[save_weights_for_sampler<br/>:360-366]:::infra
+    StuP[build_student_prompt<br/>prompts/generation/student.md<br/>:369-372]:::prompt
+    Sample[sampling_client.sample<br/>n_plans=8<br/>:374-380]:::llm
+    Dec[_decode_plan × n_plans<br/>:386-392]:::infra
+    Pick[rng.choice valid_idxs<br/>one plan to critique<br/>:399-401]:::infra
+    Pay[build_critic_request_payload<br/>+ reference_proposal_md PRIVILEGED<br/>+ prompts/review/critic_instructions.md<br/>:402-408]:::prompt
+    Sub[critic_client.submit<br/>writes critic_requests/iter_NNN.json<br/>:410]:::opus
+    Wait["critic_client.wait BLOCKING<br/>polls critic_responses/iter_NNN.json<br/>up to 900s<br/>OPUS 4.7 subagent<br/>:411-415"]:::opus
+    Fb{timeout?}:::infra
+    Cold2[COLD_START_CRITIQUE_NONE<br/>:416-418]:::prompt
+    TchP["build_teacher_prompt<br/>prompts/generation/teacher.md<br/>+ critique_xml<br/>:426-429"]:::prompt
+    TLP["compute_logprobs<br/>teacher prefix + student tokens<br/>:432-441"]:::llm
+    SLP[student logprobs<br/>already in seq.logprobs<br/>:449]:::infra
+    Adv["per-token advantage<br/>clamp(sdpo_scale*(t_lp − s_lp), ±5)<br/>:463-468"]:::infra
+    Mask["solution_only_mask<br/>build_solution_token_mask_from_tokens<br/>zeros advantage outside &lt;solution&gt;<br/>:471-485"]:::infra
+    Dat[build_sdpo_datum × n<br/>:488-494]:::infra
+    PPO["forward_backward + optim_step<br/>×4 grad steps over chunks<br/>loss_fn=ppo ε=0.2<br/>:508-531"]:::gradient
+    Buf[buffer.jsonl<br/>:542-544]:::io
+    EvalSamp[eval rollout n=8<br/>:548-554]:::llm
+    AudPay[build_audit_request_payload<br/>NO reference here<br/>prompt_version=d6_v1<br/>:560-565]:::prompt
+    AudSub[audit_client.submit ASYNC<br/>fire-and-forget<br/>:566]:::opus
+    EvalRoll[eval_rollouts.jsonl<br/>:568-571]:::io
+    Met[metrics.jsonl<br/>:579-602]:::io
+    ES[early-stop guard<br/>read audit_responses/<br/>halt if Δ ≥ 5.0<br/>:607-647]:::infra
+
+    Iter --> Ckpt --> Wts --> StuP --> Sample
+    Sample -->|seq.tokens × n| Dec --> Pick --> Pay --> Sub --> Wait --> Fb
+    Fb -- "ok" --> TchP
+    Fb -- "timeout" --> Cold2 --> TchP
+    TchP --> TLP
+    Sample --> SLP
+    TLP -->|t_lp_seq per token| Adv
+    SLP -->|s_lp per token| Adv
+    Adv --> Mask --> Dat --> PPO --> Buf --> EvalSamp --> AudPay --> AudSub
+    AudSub -.->|async| Met
+    EvalSamp --> EvalRoll
+    Buf --> Met --> ES
+
+    classDef llm fill:#fff5e6,stroke:#cc7700,color:#664400
+    classDef opus fill:#e6e6ff,stroke:#5500aa,stroke-width:2px,color:#220066
+    classDef gradient fill:#fff5f5,stroke:#c0392b,stroke-width:2.5px,color:#7a0000
+    classDef prompt fill:#eef7ff,stroke:#1a5fb4,color:#0d3b66
+    classDef io fill:#f7f7f7,stroke:#666,color:#222
+    classDef infra fill:#f5f5f5,stroke:#888,color:#222

@@ -1,0 +1,1 @@
+{"iter": 0, "n_datums": 8, "mean_adv": 0.21387564845025944, "pos_frac": 0.7257003323611205, "mean_abs_adv": 0.26929582181215356, "wall_total_sec": 312.3165473937988, "wall_sample_sec": 81.82183814048767, "wall_logprob_sec": 4.4554712772369385, "wall_train_sec": 3.314215898513794, "ts": "2026-04-25 14:03:02", "prev_critique_len": 3946}

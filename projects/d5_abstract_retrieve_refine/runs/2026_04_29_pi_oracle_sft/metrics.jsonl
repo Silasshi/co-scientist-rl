@@ -1,0 +1,3 @@
+{"epoch": 0, "n_datums": 30, "wall_total_sec": 23.099631309509277, "wall_train_sec": 20.583226919174194, "sampler_path": "tinker://773d8adb-b7f8-5ce1-a095-f3f4e2d43b8e:train:0/sampler_weights/pi_oracle_epoch_0000", "ts": "2026-04-29 06:02:15"}
+{"epoch": 1, "n_datums": 30, "wall_total_sec": 21.7462420463562, "wall_train_sec": 19.39732527732849, "sampler_path": "tinker://773d8adb-b7f8-5ce1-a095-f3f4e2d43b8e:train:0/sampler_weights/pi_oracle_epoch_0001", "ts": "2026-04-29 06:02:37"}
+{"epoch": 2, "n_datums": 30, "wall_total_sec": 21.076094388961792, "wall_train_sec": 18.691763877868652, "sampler_path": "tinker://773d8adb-b7f8-5ce1-a095-f3f4e2d43b8e:train:0/sampler_weights/pi_oracle_epoch_0002", "ts": "2026-04-29 06:02:58"}

@@ -1,0 +1,12 @@
+{
+  "api_profile": "new",
+  "policy_model": "Qwen/Qwen3-30B-A3B",
+  "num_samples": 8,
+  "max_tokens": 2048,
+  "temperature": 1.0,
+  "seed": null,
+  "goal_path": "projects/d5_abstract_retrieve_refine/dataset/research_goal.txt",
+  "reference_plan_path": "projects/d5_abstract_retrieve_refine/dataset/reference_solution.txt",
+  "oracle_abstraction_path": "projects/d5_abstract_retrieve_refine/data/smoke_v2_oracle_abstraction.md",
+  "timestamp": "2026-04-25 02:33:58"
+}

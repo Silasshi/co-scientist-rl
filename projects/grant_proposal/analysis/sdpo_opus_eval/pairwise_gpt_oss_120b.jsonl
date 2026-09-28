@@ -1,0 +1,6 @@
+{"pair": "C2-C3", "order": "AB", "winner_tag": "C2", "judge": "GPT-OSS-120B"}
+{"pair": "C2-C3", "order": "BA", "winner_tag": "C3", "judge": "GPT-OSS-120B"}
+{"pair": "C2-C4", "order": "AB", "winner_tag": "C2", "judge": "GPT-OSS-120B"}
+{"pair": "C2-C4", "order": "BA", "winner_tag": "C4", "judge": "GPT-OSS-120B"}
+{"pair": "C3-C4", "order": "AB", "winner_tag": "C3", "judge": "GPT-OSS-120B"}
+{"pair": "C3-C4", "order": "BA", "winner_tag": "C4", "judge": "GPT-OSS-120B"}

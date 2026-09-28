@@ -1,0 +1,1 @@
+{"iter": 0, "time/total": 225.19864559173584, "fresh/count": 4, "fresh/reward_mean": 0.6272222222222222, "fresh/novelty_mean": 0.0, "revise/count": 0, "revise/n_positive": 0, "revise/mean_delta": 0, "revise/max_delta": 0, "reward/mean": 0.6272222222222222, "reward/max": 0.68, "reward/buffer_max": 0.68, "beta": 19.999961853027344, "buffer/size": 4, "datums/count": 4}

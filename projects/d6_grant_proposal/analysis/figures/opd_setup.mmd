@@ -1,0 +1,30 @@
+flowchart TD
+    GoalMD[research_goal.md]:::io
+    RefMD["reference_proposal.md<br/>PRIVILEGED — student never sees this<br/>train_opd.py:257"]:::priv
+    OracleMD[oracle/slim.md]:::io
+    Cfg[Config<br/>n_plans=8 lora_rank=64<br/>opd_anchor_clip=5.0<br/>ppo_clip_eps=0.2<br/>:85-136]:::cfg
+    Cold[COLD_START_CRITIQUE_NONE<br/>prompts/generation/cold_start_critique.md<br/>prompts.py:70]:::prompt
+    Renderer[tokenizer + renderer<br/>:291-294]:::infra
+    SC[create_service_client<br/>:296-298]:::infra
+    Train[training_client<br/>LoRA r=64<br/>fresh / resume / external init<br/>:301-323]:::trainllm
+    Adam[AdamParams<br/>lr=5e-5, β=0.9/0.95<br/>:325-327]:::cfg
+    SP[SamplingParams<br/>max=8192, T=1.0, top_p=0.95<br/>:328-333]:::cfg
+    Critic["OpusCriticClient<br/>file-bus, timeout=900s<br/>writes critic_requests/iter_NNN.json<br/>:335"]:::opus
+    Audit["OpusAuditClient<br/>file-bus, fire-and-forget<br/>:336"]:::opus
+    Paths[buffer/metrics/checkpoints paths<br/>:338-340]:::io
+
+    GoalMD -->|goal| Loop((to §5.2))
+    OracleMD -->|oracle| Loop
+    RefMD -->|reference_proposal_md| Loop
+    Cold -->|critique_current iter 0| Loop
+    SC --> Train
+    SC --> Critic
+    SC --> Audit
+
+    classDef io fill:#f7f7f7,stroke:#666,color:#222
+    classDef priv fill:#ffe6e6,stroke:#aa0000,stroke-width:2px,color:#660000
+    classDef cfg fill:#f0f0fa,stroke:#5b3aaa,color:#2a1a55
+    classDef prompt fill:#eef7ff,stroke:#1a5fb4,color:#0d3b66
+    classDef infra fill:#f5f5f5,stroke:#888,color:#222
+    classDef trainllm fill:#fff0f0,stroke:#cc0044,color:#660022
+    classDef opus fill:#e6e6ff,stroke:#5500aa,stroke-width:2px,color:#220066

@@ -1,0 +1,19 @@
+{
+  "goal": "08_ecosystem_dynamics",
+  "iteration": 8,
+  "aggregate_reward": 0.975,
+  "signal_vector": {
+    "G1_problem_specificity": 5,
+    "G2_specific_aims": 5,
+    "G3_technical_evidence": 5,
+    "G4_focus": 4,
+    "G5_gap_identification": 5,
+    "G6_reasoning_depth": 5,
+    "G8_deliverable_clarity": 5,
+    "G9_scope_feasibility": 5,
+    "G10_approach_coverage": 5,
+    "G11_evidence_rigor": 5,
+    "G12_formalism": 5,
+    "G13_risk_awareness": 5
+  }
+}

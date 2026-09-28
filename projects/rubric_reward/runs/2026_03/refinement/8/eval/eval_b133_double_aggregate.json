@@ -1,0 +1,17 @@
+{
+  "checkpoint_batch": "133",
+  "loaded_batch": 133,
+  "n_eval_batches": 10,
+  "n_samples_valid": 640,
+  "initial/rubric_mean": 0.6611264880952381,
+  "initial/rubric_std": 0.22469084836673708,
+  "initial/reward_mean": 0.6922578429842081,
+  "refined/rubric_mean": 0.653592757936508,
+  "refined/rubric_std": 0.4007450236906358,
+  "refined/reward_mean": 0.6650982879858054,
+  "delta/rubric_mean": -0.007533730158730162,
+  "delta/rubric_std": 0.4356793278570132,
+  "improvement_rate": 0.60625,
+  "grader_for_scoring": "simple (best_ver compatible)",
+  "grader_for_feedback": "detailed (train_double_generation)"
+}

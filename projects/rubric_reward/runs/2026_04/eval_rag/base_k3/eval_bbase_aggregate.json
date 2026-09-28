@@ -1,0 +1,18 @@
+{
+  "checkpoint_batch": "base",
+  "loaded_batch": -1,
+  "n_eval_batches": 10,
+  "n_samples_total": 5120,
+  "n_samples_valid": 4941,
+  "rubric/mean": 0.5782441825688609,
+  "rubric/std": 0.23936568115986787,
+  "reward/mean": 0.6054884559112939,
+  "reward/std": 0.2516332317915628,
+  "format_penalty/mean": 0.020983007812500003,
+  "rag_k": 3,
+  "rag_max_words": 500,
+  "comparison": {
+    "bestversion_rubric": 0.693,
+    "reference_rubric": 0.867
+  }
+}

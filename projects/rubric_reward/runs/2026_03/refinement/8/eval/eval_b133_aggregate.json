@@ -1,0 +1,12 @@
+{
+  "checkpoint_batch": "133",
+  "loaded_batch": 133,
+  "n_eval_batches": 10,
+  "n_samples_total": 5120,
+  "n_samples_valid": 5116,
+  "rubric/mean": 0.6556055111737678,
+  "rubric/std": 0.22239558707909762,
+  "reward/mean": 0.6925990852531045,
+  "reward/std": 0.23953664757762863,
+  "format_penalty/mean": 0.01042529296875
+}

@@ -1,0 +1,5 @@
+{"epoch": 0, "n_datums": 16, "wall_total_sec": 66.02371788024902, "wall_train_sec": 6.522517204284668, "ts": "2026-04-25 19:23:39"}
+{"epoch": 1, "n_datums": 16, "wall_total_sec": 76.87122321128845, "wall_train_sec": 5.525046110153198, "ts": "2026-04-25 19:24:55"}
+{"epoch": 2, "n_datums": 16, "wall_total_sec": 76.07475543022156, "wall_train_sec": 3.7694339752197266, "ts": "2026-04-25 19:26:12"}
+{"epoch": 3, "n_datums": 16, "wall_total_sec": 70.03011226654053, "wall_train_sec": 3.483732223510742, "ts": "2026-04-25 19:27:22"}
+{"epoch": 4, "n_datums": 16, "wall_total_sec": 75.3378233909607, "wall_train_sec": 3.115159749984741, "ts": "2026-04-25 19:28:37"}

@@ -1,0 +1,8 @@
+baseline,mean_45,std,min,max,setup
+epsilon,33.62,1.93,32,37,frozen Qwen3-235B + reference plan in context
+sigma,25.25,2.44,22,29,frozen Qwen3-30B + slim oracle (no training)
+delta,25.12,4.31,17,30,frozen Qwen3-30B + reference plan in context
+alpha,25.0,2.06,21,28,Opus distillation 5 epochs × 16 plans
+mu_v2,23.88,1.83,21,26,"plan-level SDPO + critic, lr=1e-5, 10 iters"
+beta,22.75,1.98,21,26,direct SFT on reference plan
+xi,15.62,2.87,12,20,frozen Qwen3-30B + goal only (no oracle)

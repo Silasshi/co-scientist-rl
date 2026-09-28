@@ -1,0 +1,15 @@
+{"plan_id": 0, "depth": 3, "methods": 3, "feasibility": 3, "grounding": 1, "total": 10, "qwen_reward": 0.36, "tier": "low"}
+{"plan_id": 1, "depth": 4, "methods": 4, "feasibility": 4, "grounding": 1, "total": 13, "qwen_reward": 0.38000000000000006, "tier": "low"}
+{"plan_id": 2, "depth": 4, "methods": 4, "feasibility": 4, "grounding": 2, "total": 14, "qwen_reward": 0.41000000000000003, "tier": "mid_low"}
+{"plan_id": 3, "depth": 6, "methods": 6, "feasibility": 7, "grounding": 3, "total": 22, "qwen_reward": 0.58, "tier": "mid_low"}
+{"plan_id": 4, "depth": 4, "methods": 4, "feasibility": 4, "grounding": 2, "total": 14, "qwen_reward": 0.55, "tier": "mid_low"}
+{"plan_id": 5, "depth": 4, "methods": 4, "feasibility": 4, "grounding": 4, "total": 16, "qwen_reward": 0.6099999999999999, "tier": "mid"}
+{"plan_id": 6, "depth": 5, "methods": 5, "feasibility": 5, "grounding": 4, "total": 19, "qwen_reward": 0.77, "tier": "mid"}
+{"plan_id": 7, "depth": 5, "methods": 4, "feasibility": 5, "grounding": 4, "total": 18, "qwen_reward": 0.7150000000000001, "tier": "mid"}
+{"plan_id": 8, "depth": 5, "methods": 5, "feasibility": 5, "grounding": 4, "total": 19, "qwen_reward": 0.85, "tier": "high"}
+{"plan_id": 9, "depth": 5, "methods": 4, "feasibility": 5, "grounding": 4, "total": 18, "qwen_reward": 0.8049999999999999, "tier": "high"}
+{"plan_id": 10, "depth": 4, "methods": 4, "feasibility": 4, "grounding": 3, "total": 15, "qwen_reward": 0.84, "tier": "high"}
+{"plan_id": 11, "depth": 5, "methods": 4, "feasibility": 4, "grounding": 4, "total": 17, "qwen_reward": 0.94, "tier": "top"}
+{"plan_id": 12, "depth": 5, "methods": 5, "feasibility": 5, "grounding": 4, "total": 19, "qwen_reward": 0.915, "tier": "top"}
+{"plan_id": 13, "depth": 4, "methods": 5, "feasibility": 5, "grounding": 3, "total": 17, "qwen_reward": 0.9099999999999999, "tier": "top"}
+{"plan_id": "ref", "depth": 8, "methods": 8, "feasibility": 7, "grounding": 8, "total": 31}

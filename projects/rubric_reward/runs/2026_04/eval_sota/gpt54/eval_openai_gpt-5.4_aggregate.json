@@ -1,0 +1,16 @@
+{
+  "sota_model": "openai/gpt-5.4",
+  "group_size": 1,
+  "n_eval_batches": 10,
+  "n_samples_total": 640,
+  "n_samples_valid": 640,
+  "rubric/mean": 0.8263159722222223,
+  "rubric/std": 0.17353428957312592,
+  "reward/mean": 0.7063670754956546,
+  "reward/std": 0.21135659087307948,
+  "format_penalty/mean": 0.128940625,
+  "comparison": {
+    "bestversion_rubric": 0.693,
+    "reference_rubric": 0.867
+  }
+}

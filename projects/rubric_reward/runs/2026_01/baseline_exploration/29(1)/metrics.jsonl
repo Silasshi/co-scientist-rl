@@ -1,0 +1,2 @@
+{"step": 0, "progress/batch": 0, "optim/lr": 1e-05, "progress/done_frac": 0.009345794392523364, "time/total": 293.6297507286072, "reward/total": 0.1016118669690098, "dropped_samples": 97}
+{"step": 1, "progress/batch": 1, "optim/lr": 1e-05, "progress/done_frac": 0.018691588785046728, "time/total": 249.83746361732483, "reward/total": 0.08198732718894007, "dropped_samples": 157}

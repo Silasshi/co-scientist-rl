@@ -1,0 +1,18 @@
+{
+  "checkpoint_batch": "214",
+  "self_eval_model": "base",
+  "n_goals": 640,
+  "group_size": 8,
+  "rubric/mean_of_n": 0.6810633060515873,
+  "rubric/mean_of_n_std": 0.1808018118490185,
+  "rubric/oracle_bon": 0.8494464285714287,
+  "rubric/oracle_bon_std": 0.14878615899906106,
+  "rubric/self_selected": 0.6936245039682539,
+  "rubric/self_selected_std": 0.22217577980221442,
+  "selection/oracle_gap": 0.16838312251984144,
+  "selection/self_gap": 0.012561197916666655,
+  "selection/gap_closed_pct": 7.459891305428491,
+  "selection/self_picked_oracle": 0.1296875,
+  "selection/rank_corr_mean": 0.063409076311769,
+  "selection/rank_corr_std": 0.377398149233633
+}

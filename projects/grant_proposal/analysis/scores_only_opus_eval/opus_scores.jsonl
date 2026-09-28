@@ -1,0 +1,4 @@
+{"tag": "SO_MAIN_235B", "qwen": 1.0, "depth": 3, "methods": 3, "feasibility": 3, "grounding": 3, "total": 12, "eval_date": "2026-04-21", "eval_prompt": "standardized_depth_audit_v2_1to10", "scale": "1-10, total /40"}
+{"tag": "SO_B4_235B", "qwen": 0.987, "depth": 3, "methods": 3, "feasibility": 3, "grounding": 3, "total": 12, "eval_date": "2026-04-21", "eval_prompt": "standardized_depth_audit_v2_1to10", "scale": "1-10, total /40"}
+{"tag": "SO_MAIN_30B", "qwen": 0.791, "depth": 3, "methods": 3, "feasibility": 3, "grounding": 3, "total": 12, "eval_date": "2026-04-21", "eval_prompt": "standardized_depth_audit_v2_1to10", "scale": "1-10, total /40"}
+{"tag": "SO_B4_30B", "qwen": 0.789, "depth": 3, "methods": 3, "feasibility": 3, "grounding": 3, "total": 12, "eval_date": "2026-04-21", "eval_prompt": "standardized_depth_audit_v2_1to10", "scale": "1-10, total /40"}

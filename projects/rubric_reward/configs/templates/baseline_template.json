@@ -1,0 +1,9 @@
+{
+  "method": "baseline_best",
+  "round": "R1",
+  "seed": 42,
+  "api_profile": null,
+  "learning_rate": 1e-05,
+  "reward_mode": "composite",
+  "use_sdpo": false
+}

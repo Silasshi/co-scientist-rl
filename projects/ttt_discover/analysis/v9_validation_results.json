@@ -1,0 +1,51 @@
+{
+  "results": {
+    "MAIN_v6": {
+      "S2a_formalism": 1,
+      "SA_arithmetic": 5
+    },
+    "B4_v6": {
+      "S2a_formalism": 2,
+      "SA_arithmetic": 2
+    },
+    "B1_v6": {
+      "S2a_formalism": 1,
+      "SA_arithmetic": 3
+    },
+    "MAIN_v7": {
+      "S2a_formalism": 1,
+      "SA_arithmetic": 1
+    },
+    "B4_v7": {
+      "S2a_formalism": 3,
+      "SA_arithmetic": 3
+    },
+    "Reference": {
+      "S2a_formalism": 4,
+      "SA_arithmetic": 5
+    }
+  },
+  "opus_scores": {
+    "MAIN_v7": {
+      "math": 1,
+      "novelty": 2,
+      "realism": 2,
+      "rigor": 2,
+      "total": 7
+    },
+    "B4_v7": {
+      "math": 2,
+      "novelty": 2,
+      "realism": 2,
+      "rigor": 2,
+      "total": 8
+    },
+    "Reference": {
+      "math": 5,
+      "novelty": 5,
+      "realism": 5,
+      "rigor": 5,
+      "total": 20
+    }
+  }
+}

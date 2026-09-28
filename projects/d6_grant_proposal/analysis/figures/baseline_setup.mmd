@@ -1,0 +1,28 @@
+flowchart TD
+    GoalMD[research_goal.md]:::io
+    OracleMD[oracle/slim.md]:::io
+    Cfg[Config<br/>n_eval_plans=8<br/>train_baseline.py:65-89]:::cfg
+    Renderer[get_tokenizer + renderers.get_renderer<br/>:118-120]:::infra
+    SC[create_service_client<br/>:122-124]:::infra
+    SampClient[sampling_client<br/>FROZEN Qwen3-30B-A3B<br/>:125]:::frozenllm
+    GradClient[grader_client<br/>FROZEN Qwen3-30B-A3B, T=0.0<br/>:126]:::frozenllm
+    AS[_active_signals goal_domain<br/>:128]:::infra
+    BSP[build_student_prompt<br/>prompts/generation/student.md<br/>:130]:::prompt
+    SI[renderer.build_generation_prompt<br/>:132]:::infra
+    SP[SamplingParams<br/>max=8192, T=1.0, top_p=0.95<br/>:134-139]:::cfg
+    GP[grader SamplingParams<br/>max=8192, T=0.0<br/>:140-144]:::cfg
+
+    GoalMD -->|goal:str| BSP
+    OracleMD -->|oracle:str| BSP
+    BSP -->|student_text| SI
+    SI -->|student_input ModelInput| RolloutPhase((to §3.2))
+    SC --> SampClient
+    SC --> GradClient
+    Cfg --> Renderer
+    Renderer --> SI
+
+    classDef io fill:#f7f7f7,stroke:#666,color:#222
+    classDef cfg fill:#f0f0fa,stroke:#5b3aaa,color:#2a1a55
+    classDef prompt fill:#eef7ff,stroke:#1a5fb4,color:#0d3b66
+    classDef infra fill:#f5f5f5,stroke:#888,color:#222
+    classDef frozenllm fill:#fff5e6,stroke:#cc7700,color:#664400

@@ -1,0 +1,3 @@
+{"condition": "A_baseline", "depth": 5, "methods": 4, "feasibility": 5, "grounding": 4, "total": 18}
+{"condition": "B_pipeline", "depth": 5, "methods": 4, "feasibility": 5, "grounding": 4, "total": 18}
+{"condition": "C_model", "depth": 4, "methods": 4, "feasibility": 4, "grounding": 3, "total": 15}

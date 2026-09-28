@@ -1,0 +1,12 @@
+{
+  "api_profile": "new",
+  "policy_model": "Qwen/Qwen3-30B-A3B",
+  "num_samples": 8,
+  "max_tokens": 2048,
+  "temperature": 0.7,
+  "seed": 42,
+  "goal_path": "projects/ttt_discover/analysis/sanity_check/research_goal.txt",
+  "reference_plan_path": "projects/ttt_discover/analysis/sanity_check/reference_solution.txt",
+  "oracle_abstraction_path": "projects/d5_abstract_retrieve_refine/data/smoke_v1_oracle_abstraction.md",
+  "timestamp": "2026-04-24 07:24:07"
+}

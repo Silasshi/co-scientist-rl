@@ -1,0 +1,31 @@
+flowchart TD
+    GoalMD[research_goal.md]:::io
+    OracleMD[oracle/slim.md]:::io
+    Cfg[Config<br/>n_rollouts_per_group=4<br/>lora_rank=64<br/>train_grpo.py:99-146]:::cfg
+    Renderer[tokenizer + renderer<br/>:208-210]:::infra
+    SC[create_service_client<br/>:212-214]:::infra
+    GradClient[grader_client<br/>FROZEN Qwen3-30B-A3B<br/>:217]:::frozenllm
+    Train[training_client<br/>LoRA r=64, fresh OR resume<br/>:220-240]:::trainllm
+    Adam[AdamParams<br/>lr=5e-5, β=0.9/0.95, ε=1e-8<br/>:242-244]:::cfg
+    AS[_active_signals goal_domain<br/>:257]:::infra
+    BSP[build_student_prompt<br/>prompts/generation/student.md<br/>:259]:::prompt
+    SI[renderer.build_generation_prompt<br/>+ to_ints<br/>:261-262]:::infra
+    SP[SamplingParams<br/>max=8192, T=1.0, top_p=0.95<br/>:245-250]:::cfg
+    GP[grader SamplingParams<br/>:251-255]:::cfg
+    Paths[buffer/metrics/checkpoints/eval paths<br/>:264-267]:::io
+
+    GoalMD -->|goal:str| BSP
+    OracleMD -->|oracle:str| BSP
+    BSP -->|student_text| SI
+    SI -->|student_input + student_tokens_prefix| LoopStart((to §4.2))
+    SC --> Train
+    SC --> GradClient
+    Cfg --> Renderer
+    Cfg --> Adam
+
+    classDef io fill:#f7f7f7,stroke:#666,color:#222
+    classDef cfg fill:#f0f0fa,stroke:#5b3aaa,color:#2a1a55
+    classDef prompt fill:#eef7ff,stroke:#1a5fb4,color:#0d3b66
+    classDef infra fill:#f5f5f5,stroke:#888,color:#222
+    classDef frozenllm fill:#fff5e6,stroke:#cc7700,color:#664400
+    classDef trainllm fill:#fff0f0,stroke:#cc0044,color:#660022

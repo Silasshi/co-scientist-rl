@@ -1,0 +1,68 @@
+{
+  "inputs": [
+    "/home/silas/co-scientist-project/runs/2026/2/SDPO/27(rich)/train/training_logs.jsonl"
+  ],
+  "row_count": 54784,
+  "rows_with_grader_output": 53007,
+  "rows_with_sample_review": 53007,
+  "rows_with_global_review": 53007,
+  "item_count": 529931,
+  "explicit_suggestion_count": 3435,
+  "suggestions": {
+    "Introduce boundary-specific metrics like perimeter or shape complexity.": 2,
+    "Include a definition of subquadratic equivalence and its role in the reduction.": 2,
+    "Replace regression head with reconstruction error-based SNR calculation.": 2,
+    "Include explicit limitations and future work sections.": 2,
+    "Include hierarchical distance@k and mistake severity metrics.": 2,
+    "Provide computational complexity analysis and baseline comparisons.": 2,
+    "Include real-world datasets in the fine-tuning protocol.": 2,
+    "Add analysis of kernel choice sensitivity, noise robustness, and scalability limits.": 2,
+    "Include Self-BLEU to fully meet criteria.": 2,
+    "Include specific data quality metrics (e.g., coverage, noise levels) in the analysis plan.": 2,
+    "Include angular variance analysis and symmetry tests in the methodology.": 2,
+    "Include a desideratum on explicit encoding of abstract attributes (e.g., color, composition).": 1,
+    "Include a desideratum on explicit representation learning (e.g., contrastive learning, embedding spaces).": 1,
+    "Include explicit regularization (e.g., variance/covariance terms) or negative sampling.": 1,
+    "Specify stacking parameters (e.g., \"stack 4 frames and 2 actions\").": 1,
+    "Specify evaluation on Atari 100k with metrics (e.g., average score over 100 episodes).": 1,
+    "Include efficiency metrics (e.g., parameter count, training time) for comparison.": 1,
+    "Include a section on group-specific calibration or intersectional fairness metrics.": 1,
+    "Include a concrete metric (e.g., KL divergence) for context influence.": 1,
+    "Specify how the scaling factor affects token probabilities (e.g., additive/multiplicative adjustment).": 1
+  },
+  "unique_suggestion_count": 3424,
+  "max_suggestion_repeat": 2,
+  "themes": {
+    "detail_specificity": 288279,
+    "criteria_coverage": 199705,
+    "rationale_justification": 109388,
+    "evaluation_benchmarks": 77695,
+    "hyperparameter_robustness": 34120,
+    "efficiency_complexity": 31815,
+    "overlooked_flaws": 26690,
+    "scalability": 21927,
+    "consistency": 20139,
+    "ethics_safety": 18965,
+    "interpretability_control": 9863,
+    "format_compliance": 571
+  },
+  "desiderata_level_mean": {
+    "D1": 1.5652962366798697,
+    "D2": 1.3970252731015924,
+    "D3": 1.445429688015987,
+    "D4": 1.4797794429840867,
+    "D5": 1.5573895469410168,
+    "D6": 1.6249115450879454,
+    "D7": 1.7029877474614619
+  },
+  "desiderata_low_rate": {
+    "D1": 0.4209963183886204,
+    "D2": 0.5821135204394534,
+    "D3": 0.5274969760214065,
+    "D4": 0.5178749686279912,
+    "D5": 0.47820187911256373,
+    "D6": 0.4460297661393653,
+    "D7": 0.4065302841313303
+  },
+  "verdict": "Explicit `suggested_new_desiderata` entries exist, but they are mostly one-off, rubric-specific suggestions rather than recurring evidence that the global seven desiderata need revision."
+}

@@ -1,0 +1,2 @@
+{"step": 0, "progress/batch": 0, "optim/lr": 2e-06, "progress/done_frac": 0.009345794392523364, "time/total": 283.84596276283264, "reward/total": 0.55514689955054}
+{"step": 1, "progress/batch": 1, "optim/lr": 2e-06, "progress/done_frac": 0.018691588785046728, "time/total": 289.175728559494, "reward/total": 0.5161957007220009}

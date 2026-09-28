@@ -1,0 +1,15 @@
+{"plan_id": "plan_00", "quality_bucket": "reference_anchor", "source_run": "reference", "iteration": null, "entry_type": "reference", "aggregate_reward": null, "word_count": 1500}
+{"plan_id": "plan_01", "quality_bucket": "reference_anchor", "source_run": "reference", "iteration": null, "entry_type": "reference", "aggregate_reward": null, "word_count": 1500}
+{"plan_id": "plan_02", "quality_bucket": "reference_anchor", "source_run": "reference", "iteration": null, "entry_type": "reference", "aggregate_reward": null, "word_count": 1500}
+{"plan_id": "plan_03", "quality_bucket": "high", "source_run": "2026_04_21_b4_paper_01_foundopt", "iteration": 9, "entry_type": "revision", "aggregate_reward": 0.97, "word_count": 1256}
+{"plan_id": "plan_04", "quality_bucket": "high", "source_run": "2026_04_20_d4v7_01_foundopt_B4", "iteration": 19, "entry_type": "revision", "aggregate_reward": 1.0, "word_count": 1316}
+{"plan_id": "plan_05", "quality_bucket": "high", "source_run": "2026_04_21_gapo_foundopt", "iteration": 19, "entry_type": "revision", "aggregate_reward": 1.0, "word_count": 1454}
+{"plan_id": "plan_06", "quality_bucket": "high", "source_run": "2026_04_22_sdpo_C3_sdpo_scores_only", "iteration": 22, "entry_type": "revision", "aggregate_reward": 0.97, "word_count": 1303}
+{"plan_id": "plan_07", "quality_bucket": "mid", "source_run": "2026_04_21_b4_paper_01_foundopt", "iteration": 9, "entry_type": "fresh", "aggregate_reward": 0.64, "word_count": 697}
+{"plan_id": "plan_08", "quality_bucket": "mid", "source_run": "2026_04_20_d4v7_01_foundopt_MAIN", "iteration": 6, "entry_type": "fresh", "aggregate_reward": 0.84, "word_count": 966}
+{"plan_id": "plan_09", "quality_bucket": "mid", "source_run": "2026_04_21_rag_foundopt_B4", "iteration": 2, "entry_type": "revision", "aggregate_reward": 0.565, "word_count": 776}
+{"plan_id": "plan_10", "quality_bucket": "mid", "source_run": "2026_04_22_sdpo_C4_aggregate_scores_only", "iteration": 25, "entry_type": "fresh", "aggregate_reward": 0.55, "word_count": 632}
+{"plan_id": "plan_11", "quality_bucket": "low", "source_run": "2026_04_21_b4_paper_01_foundopt", "iteration": 0, "entry_type": "fresh", "aggregate_reward": 0.43, "word_count": 549}
+{"plan_id": "plan_12", "quality_bucket": "low", "source_run": "2026_04_20_d4v7_01_foundopt_MAIN", "iteration": 0, "entry_type": "fresh", "aggregate_reward": 0.42, "word_count": 675}
+{"plan_id": "plan_13", "quality_bucket": "low", "source_run": "2026_04_21_gapo_foundopt", "iteration": 2, "entry_type": "fresh", "aggregate_reward": 0.445, "word_count": 813}
+{"plan_id": "plan_14", "quality_bucket": "low", "source_run": "2026_04_22_sdpo_C2_B4_scores_only", "iteration": 1, "entry_type": "fresh", "aggregate_reward": 0.38, "word_count": 543}

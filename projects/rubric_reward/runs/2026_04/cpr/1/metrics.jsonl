@@ -1,0 +1,13 @@
+{"step": 0, "progress/batch": 0, "optim/lr": 1e-05, "progress/done_frac": 0.000286368843069874, "accuracy": 0.6588235294117647, "time/total": 19.59156370162964}
+{"step": 1, "progress/batch": 1, "optim/lr": 1e-05, "progress/done_frac": 0.000572737686139748, "accuracy": 0.5426829268292683, "time/total": 22.06912088394165}
+{"step": 2, "progress/batch": 2, "optim/lr": 1e-05, "progress/done_frac": 0.000859106529209622, "accuracy": 0.6114649681528662, "time/total": 20.378305912017822}
+{"step": 3, "progress/batch": 3, "optim/lr": 1e-05, "progress/done_frac": 0.001145475372279496, "accuracy": 0.4032258064516129, "time/total": 20.033886909484863}
+{"step": 4, "progress/batch": 4, "optim/lr": 1e-05, "progress/done_frac": 0.0014318442153493699, "accuracy": 0.5555555555555556, "time/total": 19.66149139404297}
+{"step": 5, "progress/batch": 5, "optim/lr": 1e-05, "progress/done_frac": 0.001718213058419244, "accuracy": 0.5963855421686747, "time/total": 21.56520175933838}
+{"step": 6, "progress/batch": 6, "optim/lr": 1e-05, "progress/done_frac": 0.002004581901489118, "accuracy": 0.5743589743589743, "time/total": 23.248490571975708}
+{"step": 7, "progress/batch": 7, "optim/lr": 1e-05, "progress/done_frac": 0.002290950744558992, "accuracy": 0.5894736842105263, "time/total": 19.679039478302002}
+{"step": 8, "progress/batch": 8, "optim/lr": 1e-05, "progress/done_frac": 0.002577319587628866, "accuracy": 0.565, "time/total": 17.19409418106079}
+{"step": 9, "progress/batch": 9, "optim/lr": 1e-05, "progress/done_frac": 0.0028636884306987398, "accuracy": 0.390625, "time/total": 18.208446502685547}
+{"step": 10, "progress/batch": 10, "optim/lr": 1e-05, "progress/done_frac": 0.003150057273768614, "accuracy": 0.46111111111111114, "time/total": 18.262489318847656}
+{"step": 11, "progress/batch": 11, "optim/lr": 1e-05, "progress/done_frac": 0.003436426116838488, "accuracy": 0.5217391304347826, "time/total": 19.02952265739441}
+{"step": 12, "progress/batch": 12, "optim/lr": 1e-05, "progress/done_frac": 0.0037227949599083618, "accuracy": 0.470873786407767, "time/total": 17.768773555755615}

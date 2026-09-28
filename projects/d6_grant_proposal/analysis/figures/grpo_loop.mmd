@@ -1,0 +1,25 @@
+flowchart TD
+    Iter([Iter idx])
+    Ckpt[Save checkpoint<br/>if iter %% save_every == 0<br/>:275-283]:::infra
+    Wts[save_weights_for_sampler<br/>create new sampling_client<br/>:285-291]:::infra
+    Sample[sampling_client.sample<br/>n_rollouts_per_group=4<br/>via prompts/generation/student.md<br/>:295-302]:::llm
+    Decode[parse_response + extract_solution × 4<br/>:305-312]:::infra
+    Grade[_grade_plan × 4<br/>build_single_call_prompt<br/>FROZEN Qwen3-30B grader<br/>:314-326]:::llm
+    AdvCalc["group advantage<br/>(r_i − mean) / (std + 1e-8)<br/>:333-335"]:::infra
+    Skip{rewards all 0?<br/>OR all advs 0?<br/>:329-339}:::infra
+    Clip["clip ±5<br/>broadcast to all gen tokens<br/>per_tok_adv = [a]*len(gen)<br/>:360-361"]:::infra
+    Mask[solution_only_mask<br/>build_solution_token_mask_from_tokens<br/>:366-373]:::infra
+    Datum[build types.Datum × 4<br/>target_tokens, logprobs, advantages<br/>:385-399]:::infra
+    Loss["forward_backward + optim_step<br/>×4 grad steps over chunks<br/>loss_fn=ppo, ε=0.2<br/>:415-429"]:::gradient
+    Eval[Eval rollout n=8<br/>append eval_rollouts.jsonl<br/>:433-450]:::llm
+    Buf[buffer.jsonl + metrics.jsonl<br/>:452-475]:::io
+
+    Iter --> Ckpt --> Wts --> Sample --> Decode --> Grade --> AdvCalc --> Skip
+    Skip -- continue --> Clip
+    Skip -- "skip iter" --> Iter
+    Clip --> Mask --> Datum --> Loss --> Eval --> Buf
+
+    classDef llm fill:#fff5e6,stroke:#cc7700,color:#664400
+    classDef gradient fill:#fff5f5,stroke:#c0392b,stroke-width:2.5px,color:#7a0000
+    classDef io fill:#f7f7f7,stroke:#666,color:#222
+    classDef infra fill:#f5f5f5,stroke:#888,color:#222

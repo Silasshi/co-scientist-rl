@@ -1,0 +1,68 @@
+{
+  "inputs": [
+    "/home/silas/co-scientist-project/runs/2026/2/SDPO/27(rich)/train/training_logs.jsonl"
+  ],
+  "row_count": 4016,
+  "rows_with_grader_output": 4000,
+  "rows_with_sample_review": 4000,
+  "rows_with_global_review": 4000,
+  "item_count": 39992,
+  "explicit_suggestion_count": 187,
+  "suggestions": {
+    "Introduce boundary-specific metrics like perimeter or shape complexity.": 2,
+    "Include a desideratum on explicit encoding of abstract attributes (e.g., color, composition).": 1,
+    "Include a desideratum on explicit representation learning (e.g., contrastive learning, embedding spaces).": 1,
+    "Include explicit regularization (e.g., variance/covariance terms) or negative sampling.": 1,
+    "Specify stacking parameters (e.g., \"stack 4 frames and 2 actions\").": 1,
+    "Specify evaluation on Atari 100k with metrics (e.g., average score over 100 episodes).": 1,
+    "Include efficiency metrics (e.g., parameter count, training time) for comparison.": 1,
+    "Include a section on group-specific calibration or intersectional fairness metrics.": 1,
+    "Include a concrete metric (e.g., KL divergence) for context influence.": 1,
+    "Specify how the scaling factor affects token probabilities (e.g., additive/multiplicative adjustment).": 1,
+    "Specify comparison techniques (e.g., CoS, in-context learning).": 1,
+    "Include domain-specific benchmarks (e.g., medical, educational) for testing.": 1,
+    "Include timing benchmarks and optimization strategies.": 1,
+    "Specify analysis techniques (e.g., saliency maps, token attribution).": 1,
+    "Include regularization or diversity constraints to prevent collapse.": 1,
+    "Include modular design principles, version control, and update protocols in dataset architecture.": 1,
+    "Include IoU or domain-specific metrics in the evaluation plan.": 1,
+    "Include H_pres calculation (e.g., k-nearest neighbor similarity between teacher/student embeddings) and its correlation with accuracy.": 1,
+    "Specify datasets and visualization techniques (e.g., t-SNE on IMDB-AW, DBLP) and alignment metrics.": 1,
+    "Include datasets with varying sparsity, node degrees, and feature distributions (e.g., IMDB-AW, DBLP-Paper).": 1
+  },
+  "unique_suggestion_count": 186,
+  "max_suggestion_repeat": 2,
+  "themes": {
+    "detail_specificity": 24907,
+    "criteria_coverage": 16372,
+    "rationale_justification": 8408,
+    "evaluation_benchmarks": 6305,
+    "efficiency_complexity": 2332,
+    "hyperparameter_robustness": 2107,
+    "overlooked_flaws": 1941,
+    "scalability": 1804,
+    "consistency": 1804,
+    "ethics_safety": 1712,
+    "interpretability_control": 660,
+    "format_compliance": 98
+  },
+  "desiderata_level_mean": {
+    "D1": 1.514627925585117,
+    "D2": 1.2733046609321865,
+    "D3": 1.399754950990198,
+    "D4": 1.402380476095219,
+    "D5": 1.4725695139027806,
+    "D6": 1.5635877175435087,
+    "D7": 1.6190738147629526
+  },
+  "desiderata_low_rate": {
+    "D1": 0.4452890578115623,
+    "D2": 0.663507701540308,
+    "D3": 0.5481596319263853,
+    "D4": 0.5629875975195039,
+    "D5": 0.5246549309861972,
+    "D6": 0.4789457891578316,
+    "D7": 0.4465393078615723
+  },
+  "verdict": "Explicit `suggested_new_desiderata` entries exist, but they are mostly one-off, rubric-specific suggestions rather than recurring evidence that the global seven desiderata need revision."
+}

@@ -1,0 +1,40 @@
+{
+  "test_date": "2026-04-21",
+  "goal": "01_foundopt",
+  "model": "Qwen/Qwen3-30B-A3B",
+  "opus_eval": {
+    "n_plans": 15,
+    "qwen_opus_spearman_rho": 0.571,
+    "qwen_opus_spearman_p": 0.033,
+    "key_finding": "Qwen 0.580 plan got highest non-ref Opus (22/40). Qwen 0.940 got only 17/40. Moderate correlation overall but poor in high-score region."
+  },
+  "pairwise_test_cpr_prompt": {
+    "accuracy": "50% (100% position bias, always picks first plan)",
+    "verdict": "UNUSABLE \u2014 original CPR prompt triggers extreme position bias in Qwen3-30B base model"
+  },
+  "pairwise_test_detailed_prompt": {
+    "large_gap_gte5": {
+      "accuracy": "85% (17/20)",
+      "position_bias": "X=9 Y=11 (balanced)",
+      "consistency": "90% (9/10)"
+    },
+    "small_gap_3to4": {
+      "accuracy": "65% (13/20)",
+      "position_bias": "X=11 Y=9 (balanced)",
+      "consistency": "90% (9/10)",
+      "saturation_zone_both_qwen_gte07": "50% (2/4 \u2014 too few samples)"
+    },
+    "verdict": "Qwen3-30B CAN discriminate plan quality with proper prompting. 85% at large gaps, 65% at small gaps."
+  },
+  "dpo_implications": {
+    "positive": "Model has internal quality discrimination ability (85% at gap>=5). Position bias fixable via prompt design.",
+    "concern_1": "Small gap accuracy (65%) is moderate \u2014 DPO signal will be noisy for similar-quality pairs",
+    "concern_2": "In saturation zone (both Qwen>=0.7), pairwise accuracy drops to ~50% \u2014 DPO may not help break the ceiling",
+    "concern_3": "Qwen pairwise follows Qwen scalar preferences, NOT Opus. DPO with same-model preference = same Goodhart risk as RL with Qwen reward",
+    "critical_insight": "Using Qwen as BOTH policy AND preference model adds no new information. For DPO to beat RL, need an EXTERNAL preference signal (Opus, human, or stronger model)."
+  },
+  "experiments": {
+    "exp_a_frozen_no_cr": "Frozen model fresh mean = 0.416, NOT 0.047 as in v7-Frozen (seed difference). RL advantage over frozen baseline is much smaller than initially thought.",
+    "exp_b_rl_scores_only": "RL+SO fresh=0.436 vs B4-SO fresh=0.409. Delta = +0.027. Within noise."
+  }
+}

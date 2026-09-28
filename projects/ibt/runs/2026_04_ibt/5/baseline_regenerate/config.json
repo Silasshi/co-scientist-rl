@@ -1,0 +1,9 @@
+{
+  "baseline": "training_free",
+  "policy_model": "Qwen/Qwen3-8B",
+  "grader_model": "Qwen/Qwen3-30B-A3B",
+  "num_goals": 50,
+  "num_turns": 5,
+  "accumulate_hints": true,
+  "training": false
+}

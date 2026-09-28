@@ -1,0 +1,19 @@
+{
+  "_comment": "D6 OPD pilot: ai/02_foundational_rl, train_opd. Run after oracle is built.",
+  "goal_domain": "ai",
+  "goal_name": "02_foundational_rl",
+  "dataset_base": "projects/d6_grant_proposal/dataset",
+  "data_base": "projects/d6_grant_proposal/data",
+  "log_path": "projects/d6_grant_proposal/runs/2026_04_30_pilot_foundrl_opd",
+  "model_name": "Qwen/Qwen3-30B-A3B",
+  "learning_rate": 5e-5,
+  "n_iterations": 10,
+  "n_rollouts": 4,
+  "max_tokens": 8192,
+  "solution_only_mask": true,
+  "loss_fn_name": "ppo",
+  "ppo_clip_eps": 0.2,
+  "opd_anchor_clip": 5.0,
+  "eval_every": 1,
+  "checkpoint_every": 2
+}

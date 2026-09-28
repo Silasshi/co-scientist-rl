@@ -1,0 +1,15 @@
+{"plan_id": "plan_00", "model": "opus_4_7_depth_audit", "depth": 8, "methods": 8, "feasibility": 8, "grounding": 9, "total": 33}
+{"plan_id": "plan_01", "model": "opus_4_7_depth_audit", "depth": 8, "methods": 8, "feasibility": 8, "grounding": 8, "total": 32}
+{"plan_id": "plan_02", "model": "opus_4_7_depth_audit", "depth": 8, "methods": 8, "feasibility": 8, "grounding": 9, "total": 33}
+{"plan_id": "plan_03", "model": "opus_4_7_depth_audit", "depth": 5, "methods": 5, "feasibility": 6, "grounding": 5, "total": 21}
+{"plan_id": "plan_04", "model": "opus_4_7_depth_audit", "depth": 4, "methods": 5, "feasibility": 5, "grounding": 4, "total": 18}
+{"plan_id": "plan_05", "model": "opus_4_7_depth_audit", "depth": 5, "methods": 4, "feasibility": 6, "grounding": 4, "total": 19}
+{"plan_id": "plan_06", "model": "opus_4_7_depth_audit", "depth": 4, "methods": 4, "feasibility": 4, "grounding": 3, "total": 15}
+{"plan_id": "plan_07", "model": "opus_4_7_depth_audit", "depth": 4, "methods": 3, "feasibility": 4, "grounding": 3, "total": 14}
+{"plan_id": "plan_08", "model": "opus_4_7_depth_audit", "depth": 4, "methods": 4, "feasibility": 5, "grounding": 3, "total": 16}
+{"plan_id": "plan_09", "model": "opus_4_7_depth_audit", "depth": 4, "methods": 3, "feasibility": 4, "grounding": 2, "total": 13}
+{"plan_id": "plan_10", "model": "opus_4_7_depth_audit", "depth": 4, "methods": 3, "feasibility": 3, "grounding": 2, "total": 12}
+{"plan_id": "plan_11", "model": "opus_4_7_depth_audit", "depth": 4, "methods": 3, "feasibility": 4, "grounding": 3, "total": 14}
+{"plan_id": "plan_12", "model": "opus_4_7_depth_audit", "depth": 3, "methods": 3, "feasibility": 3, "grounding": 2, "total": 11}
+{"plan_id": "plan_13", "model": "opus_4_7_depth_audit", "depth": 3, "methods": 3, "feasibility": 4, "grounding": 2, "total": 12}
+{"plan_id": "plan_14", "model": "opus_4_7_depth_audit", "depth": 4, "methods": 3, "feasibility": 3, "grounding": 2, "total": 12}

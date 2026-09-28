@@ -1,0 +1,158 @@
+{
+  "method_comparison": {
+    "separate_call": {
+      "avg_specificity_ratio": 44.416,
+      "halo_mean_corr": 0.164,
+      "halo_pc1_ratio": 0.321,
+      "mean_repeat_std": 0.098
+    }
+  },
+  "per_signal_validity": {
+    "P_S1_mechanism": {
+      "separate_call": {
+        "target": "S1_mechanism",
+        "ref_target_score": 3,
+        "perturbed_target_score": 2,
+        "targeted_drop": 1,
+        "avg_non_targeted_drop": 0.125,
+        "max_non_targeted_drop": 1.0,
+        "specificity_ratio": 7.407
+      }
+    },
+    "P_S2_rigor": {
+      "separate_call": {
+        "target": "S2_rigor",
+        "ref_target_score": 3,
+        "perturbed_target_score": 2,
+        "targeted_drop": 1,
+        "avg_non_targeted_drop": 0.0,
+        "max_non_targeted_drop": 1.0,
+        "specificity_ratio": 100.0
+      }
+    },
+    "P_S3_positioning": {
+      "separate_call": {
+        "target": "S3_positioning",
+        "ref_target_score": 4,
+        "perturbed_target_score": 3,
+        "targeted_drop": 1,
+        "avg_non_targeted_drop": 0.0,
+        "max_non_targeted_drop": 1.0,
+        "specificity_ratio": 100.0
+      }
+    },
+    "P_S4_significance": {
+      "separate_call": {
+        "target": "S4_significance",
+        "ref_target_score": 4,
+        "perturbed_target_score": 2,
+        "targeted_drop": 2,
+        "avg_non_targeted_drop": 0.0,
+        "max_non_targeted_drop": 1.0,
+        "specificity_ratio": 200.0
+      }
+    },
+    "P_S5_stability": {
+      "separate_call": {
+        "target": "S5_stability",
+        "ref_target_score": 2,
+        "perturbed_target_score": 1,
+        "targeted_drop": 1,
+        "avg_non_targeted_drop": -0.125,
+        "max_non_targeted_drop": 0.0,
+        "specificity_ratio": -8.696
+      }
+    },
+    "P_S6_failure_interp": {
+      "separate_call": {
+        "target": "S6_failure_interp",
+        "ref_target_score": 1,
+        "perturbed_target_score": 2,
+        "targeted_drop": -1,
+        "avg_non_targeted_drop": 0.25,
+        "max_non_targeted_drop": 1.0,
+        "specificity_ratio": -3.846
+      }
+    },
+    "P_S7_specificity": {
+      "separate_call": {
+        "target": "S7_specificity",
+        "ref_target_score": 3,
+        "perturbed_target_score": 2,
+        "targeted_drop": 1,
+        "avg_non_targeted_drop": -0.125,
+        "max_non_targeted_drop": 0.0,
+        "specificity_ratio": -8.696
+      }
+    },
+    "P_S8_scope": {
+      "separate_call": {
+        "target": "S8_scope",
+        "ref_target_score": 4,
+        "perturbed_target_score": 1,
+        "targeted_drop": 3,
+        "avg_non_targeted_drop": 0.5,
+        "max_non_targeted_drop": 1.0,
+        "specificity_ratio": 5.882
+      }
+    },
+    "P_S9_focus": {
+      "separate_call": {
+        "target": "S9_focus",
+        "ref_target_score": 4,
+        "perturbed_target_score": 2,
+        "targeted_drop": 2,
+        "avg_non_targeted_drop": 0.25,
+        "max_non_targeted_drop": 1.0,
+        "specificity_ratio": 7.692
+      }
+    }
+  },
+  "halo_effect": {
+    "separate_call": {
+      "mean_inter_correlation": {
+        "S1_mechanism": 0.284,
+        "S2_rigor": 0.067,
+        "S3_positioning": 0.203,
+        "S4_significance": 0.16,
+        "S5_stability": 0.25,
+        "S6_failure_interp": 0.001,
+        "S7_specificity": 0.221,
+        "S8_scope": 0.144,
+        "S9_focus": 0.145
+      },
+      "overall_mean_inter_corr": 0.164,
+      "pca": {
+        "top_eigenvalues": [
+          1.132,
+          0.754,
+          0.616,
+          0.425,
+          0.229
+        ],
+        "pc1_variance_ratio": 0.321
+      }
+    }
+  },
+  "reliability": {
+    "separate_call": {
+      "mean_repeat_std": 0.098,
+      "max_repeat_std": 1.0,
+      "frac_zero_std": 0.812
+    }
+  },
+  "summary": {},
+  "reference_scores": {
+    "separate_call": {
+      "S1_mechanism": 3,
+      "S2_rigor": 3,
+      "S3_positioning": 4,
+      "S4_significance": 4,
+      "S5_stability": 2,
+      "S6_failure_interp": 1,
+      "S7_specificity": 3,
+      "S8_scope": 4,
+      "S9_focus": 4
+    }
+  }
+}

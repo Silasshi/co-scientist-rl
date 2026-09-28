@@ -1,0 +1,9 @@
+{
+  "baseline": "grpo",
+  "policy_model": "Qwen/Qwen3-4B-Instruct-2507",
+  "grader_model": "Qwen/Qwen3-30B-A3B",
+  "num_goals": 50,
+  "group_size": 8,
+  "learning_rate": 1e-05,
+  "lora_rank": 32
+}

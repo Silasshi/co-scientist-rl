@@ -1,0 +1,5 @@
+{"tag": "C2full_best", "qwen": 0.845, "opus": 16, "D": 4, "M": 4, "F": 5, "G": 3, "eval_date": "2026-04-22", "eval_prompt": "standardized_depth_audit_v2_1to10", "scale": "1-10, total /40"}
+{"tag": "C2full_p75", "qwen": 0.705, "opus": 20, "D": 5, "M": 5, "F": 6, "G": 4, "eval_date": "2026-04-22", "eval_prompt": "standardized_depth_audit_v2_1to10", "scale": "1-10, total /40"}
+{"tag": "C2full_median", "qwen": 0.46, "opus": 13, "D": 4, "M": 3, "F": 3, "G": 3, "eval_date": "2026-04-22", "eval_prompt": "standardized_depth_audit_v2_1to10", "scale": "1-10, total /40"}
+{"tag": "C2full_p25", "qwen": 0.385, "opus": 13, "D": 4, "M": 3, "F": 3, "G": 3, "eval_date": "2026-04-22", "eval_prompt": "standardized_depth_audit_v2_1to10", "scale": "1-10, total /40"}
+{"tag": "C2full_worst", "qwen": 0.285, "opus": 11, "D": 4, "M": 3, "F": 2, "G": 2, "eval_date": "2026-04-22", "eval_prompt": "standardized_depth_audit_v2_1to10", "scale": "1-10, total /40"}

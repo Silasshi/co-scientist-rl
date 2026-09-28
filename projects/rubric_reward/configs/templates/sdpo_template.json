@@ -1,0 +1,12 @@
+{
+  "method": "sdpo",
+  "round": "R1",
+  "seed": 42,
+  "api_profile": null,
+  "learning_rate": 1e-05,
+  "use_sdpo": true,
+  "sdpo_grpo_mix_lambda": 0.3,
+  "policy_output_mode": "solution_only",
+  "reward_mode": "composite",
+  "max_tokens": 2560
+}

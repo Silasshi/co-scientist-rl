@@ -1,0 +1,5 @@
+{"step": 0, "progress/batch": 0, "optim/lr": 1e-05, "progress/done_frac": 0.0005820721769499418, "time/total": 247.5811939239502, "think/score_mean": 0.625, "solution/rubric_mean": 0.5414285714285714, "boundary_detection_rate": 1.0}
+{"step": 1, "progress/batch": 1, "optim/lr": 1e-05, "progress/done_frac": 0.0011641443538998836, "time/total": 249.94164562225342, "think/score_mean": 0.6399999999999999, "solution/rubric_mean": 0.5433928571428571, "boundary_detection_rate": 1.0}
+{"step": 2, "progress/batch": 2, "optim/lr": 1e-05, "progress/done_frac": 0.0017462165308498253, "time/total": 357.6990430355072, "think/score_mean": 0.71, "solution/rubric_mean": 0.687142857142857, "boundary_detection_rate": 1.0}
+{"step": 3, "progress/batch": 3, "optim/lr": 1e-05, "progress/done_frac": 0.002328288707799767, "time/total": 266.9758093357086, "think/score_mean": 0.6849999999999999, "solution/rubric_mean": 0.6408928571428572, "boundary_detection_rate": 1.0}
+{"step": 4, "progress/batch": 4, "optim/lr": 1e-05, "progress/done_frac": 0.002910360884749709, "time/total": 186.75536394119263, "think/score_mean": 0.65, "solution/rubric_mean": 0.61, "boundary_detection_rate": 1.0}

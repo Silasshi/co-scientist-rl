@@ -1,0 +1,12 @@
+{
+  "base_url": null,
+  "log_path": "/home/silas/tinker-cookbook/tinker_cookbook/recipes/logs_for_co_scientist/2026/1/25(rl_loop_gsm8k)",
+  "model_name": "meta-llama/Llama-3.1-8B",
+  "batch_size": 128,
+  "group_size": 16,
+  "learning_rate": 4e-05,
+  "max_length": 32768,
+  "lora_rank": 32,
+  "save_every": 20,
+  "max_tokens": 256
+}

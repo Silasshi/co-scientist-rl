@@ -1,0 +1,13 @@
+{
+  "eval_output_path": "/home/silas/co-scientist-project/runs/2026/2/withA1,A2/2(ml)/reference_plan_score",
+  "base_url": null,
+  "api_profile": null,
+  "grader_model_name": "Qwen/Qwen3-30B-A3B",
+  "ml_data": true,
+  "arxiv_data": false,
+  "pubmed_data": false,
+  "use_train_split": false,
+  "batch_size": 64,
+  "grader_max_tokens": 8192,
+  "grader_temperature": 0.0
+}

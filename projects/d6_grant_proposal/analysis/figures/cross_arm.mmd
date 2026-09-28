@@ -1,0 +1,48 @@
+flowchart LR
+    subgraph BL[baseline ─ frozen]
+        direction TB
+        b1[load goal+oracle] --> b2[student.md]:::prompt
+        b2 --> b3[sample n=8<br/>FROZEN Qwen3]:::frozenllm
+        b3 --> b4[Qwen3 12-signal grader]:::frozenllm
+        b4 --> b5[buffer.jsonl]:::io
+    end
+
+    subgraph GR[GRPO ─ reward-only]
+        direction TB
+        g1[load goal+oracle] --> g2[student.md]:::prompt
+        g2 --> g3[sample n=4<br/>LoRA Qwen3]:::trainllm
+        g3 --> g4[Qwen3 12-signal grader]:::frozenllm
+        g4 --> g5["group adv<br/>(r−μ)/σ"]:::infra
+        g5 --> g6[sol mask]:::infra
+        g6 --> g7[PPO-clip step ε=0.2]:::gradient
+        g7 --> g8[buffer.jsonl]:::io
+    end
+
+    subgraph OP[OPD ─ paper main arm]
+        direction TB
+        o0["reference_proposal.md<br/>PRIVILEGED"]:::priv
+        o1[load goal+oracle] --> o2[student.md]:::prompt
+        o2 --> o3[sample n=8<br/>LoRA Qwen3]:::trainllm
+        o3 --> o4[OPUS 4.7 critic<br/>file-bus subagent<br/>+ critic_instructions.md]:::opus
+        o0 --> o4
+        o4 --> o5[teacher.md<br/>+ critique_xml]:::opd
+        o5 --> o6[teacher logprobs]:::opd
+        o3 --> o7[student logprobs]:::opd
+        o6 --> o8["per-tok adv<br/>clamp(t_lp−s_lp, ±5)"]:::opd
+        o7 --> o8
+        o8 --> o9[sol mask]:::infra
+        o9 --> o10[PPO-clip step ε=0.2]:::gradient
+        o10 --> o11[buffer.jsonl]:::io
+        o10 -.->|async| o12[Opus audit]:::async
+    end
+
+    classDef io fill:#f7f7f7,stroke:#666,color:#222
+    classDef prompt fill:#eef7ff,stroke:#1a5fb4,color:#0d3b66
+    classDef frozenllm fill:#fff5e6,stroke:#cc7700,color:#664400
+    classDef trainllm fill:#fff0f0,stroke:#cc0044,color:#660022
+    classDef gradient fill:#fff5f5,stroke:#c0392b,stroke-width:2.5px,color:#7a0000
+    classDef opus fill:#e6e6ff,stroke:#5500aa,stroke-width:2px,color:#220066
+    classDef opd fill:#fff7e6,stroke:#cc7700,color:#664400
+    classDef priv fill:#ffe6e6,stroke:#aa0000,stroke-width:2px,color:#660000
+    classDef async fill:#fffbe6,stroke:#aa8800,stroke-dasharray:5 3,color:#5e4500
+    classDef infra fill:#f5f5f5,stroke:#888,color:#222

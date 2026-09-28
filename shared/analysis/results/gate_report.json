@@ -1,0 +1,77 @@
+{
+  "timestamp": "2026-03-29 19:19:37",
+  "total_time_s": 691.1,
+  "tests": [
+    {
+      "test": "retrieval_overlap",
+      "mean_rouge_l": 0.1328,
+      "std_rouge_l": 0.0196,
+      "n_goals": 6872,
+      "n_folds": 5,
+      "k_neighbors": 5,
+      "threshold": 0.3,
+      "passed": false
+    },
+    {
+      "test": "rubric_clustering",
+      "total_items": 68702,
+      "unique_items_exact": 68399,
+      "n_item_clusters": 30,
+      "top_10_concentration": 0.6115,
+      "concentration_threshold": 0.6,
+      "n_goal_clusters": 20,
+      "mean_within_cluster_rubric_overlap": 0.1281,
+      "passed": true
+    },
+    {
+      "test": "vocabulary_stats",
+      "total_items": 68702,
+      "unique_items_exact": 68399,
+      "unique_ratio": 0.9956,
+      "items_per_goal_mean": 10.0,
+      "items_per_goal_std": 0.12,
+      "token_vocabulary_size": 12684,
+      "top_keywords": {
+        "model": 11179,
+        "data": 7835,
+        "performance": 3392,
+        "analysis": 3032,
+        "metric": 2410,
+        "evaluation": 2074,
+        "experiment": 1672,
+        "sample": 1202,
+        "bias": 907,
+        "control": 884,
+        "comparison": 801,
+        "variable": 542,
+        "baseline": 456,
+        "methodology": 316,
+        "statistical": 251
+      },
+      "most_common_items": [
+        {
+          "item": "The method should be computationally efficient and scalable to large datasets.",
+          "count": 13
+        },
+        {
+          "item": "The approach should be computationally efficient and scalable.",
+          "count": 13
+        },
+        {
+          "item": "The method should be computationally efficient and scalable.",
+          "count": 11
+        },
+        {
+          "item": "The approach should be computationally efficient.",
+          "count": 10
+        },
+        {
+          "item": "The method should be computationally efficient.",
+          "count": 9
+        }
+      ]
+    }
+  ],
+  "go_decision": false,
+  "summary": "NO-GO: Rubric items are NOT sufficiently predictable. RC-GRPO unlikely to help."
+}

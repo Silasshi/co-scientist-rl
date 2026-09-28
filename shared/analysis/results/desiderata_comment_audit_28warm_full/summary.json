@@ -1,0 +1,68 @@
+{
+  "inputs": [
+    "/home/silas/co-scientist-project/runs/2026/2/SDPO/28_recovery_A_warmstart_best214/train/training_logs.jsonl"
+  ],
+  "row_count": 25600,
+  "rows_with_grader_output": 457,
+  "rows_with_sample_review": 457,
+  "rows_with_global_review": 457,
+  "item_count": 4570,
+  "explicit_suggestion_count": 55,
+  "suggestions": {
+    "Include a user-adjustable hybridization parameter (e.g., 0-1 weight) for System-1/System-2 balance.": 1,
+    "Include long-horizon benchmarks (e.g., 100+ sub-goals) in evaluation.": 1,
+    "Include cross-domain generalization experiments.": 1,
+    "Introduce checklist generation and scoring as part of the framework.": 1,
+    "Integrate checklist-based evaluation with uncertainty-aware scoring.": 1,
+    "Add positional bias analysis (e.g., input position perturbations) and mitigation strategies.": 1,
+    "Include visualization or explanation of how uncertainty scores and ensembles contribute to final judgments.": 1,
+    "Provide a detailed comparison of LLaMA-7B and LLaMA-13B's performance across metrics and tasks.": 1,
+    "Include MT-BENCH and WILDBENCH to align with the research scenario.": 1,
+    "Specify subsampling strategies and report metrics on small datasets.": 1,
+    "Add a section explaining how text embeddings are used in the transition model or policy network.": 1,
+    "Include ablation studies on paraphrased actions or noisy text inputs.": 1,
+    "Include scale normalization (e.g., perimeter/\u221aarea) for boundary complexity.": 1,
+    "Include ablation studies comparing BC to other boundary metrics (e.g., fractal dimension).": 1,
+    "Include cross-dataset validation in the evaluation section.": 1,
+    "Include specific methods for categorical feature variance calculation (e.g., one-hot encoding, embedding aggregation).": 1,
+    "Include methods for distributed computation or efficient variance estimation for large-scale data.": 1,
+    "Include explicit diversity criteria and sample character lists.": 1,
+    "Provide methods for determining optimal alpha values and validate trade-offs with user studies.": 1,
+    "Integrate mitigation strategy evaluation into the framework, e.g., by comparing CAGE scores across strategies.": 1
+  },
+  "unique_suggestion_count": 55,
+  "max_suggestion_repeat": 1,
+  "themes": {
+    "detail_specificity": 2203,
+    "criteria_coverage": 1598,
+    "evaluation_benchmarks": 927,
+    "rationale_justification": 822,
+    "efficiency_complexity": 307,
+    "overlooked_flaws": 299,
+    "hyperparameter_robustness": 272,
+    "scalability": 268,
+    "ethics_safety": 259,
+    "consistency": 247,
+    "interpretability_control": 133,
+    "format_compliance": 23
+  },
+  "desiderata_level_mean": {
+    "D1": 1.852078774617068,
+    "D2": 1.685339168490153,
+    "D3": 1.724070021881838,
+    "D4": 1.7914660831509848,
+    "D5": 1.8807439824945296,
+    "D6": 1.9354485776805253,
+    "D7": 2.0315098468271335
+  },
+  "desiderata_low_rate": {
+    "D1": 0.30087527352297594,
+    "D2": 0.43544857768052514,
+    "D3": 0.38424507658643325,
+    "D4": 0.38030634573304156,
+    "D5": 0.3520787746170678,
+    "D6": 0.3148796498905908,
+    "D7": 0.25689277899343543
+  },
+  "verdict": "Explicit `suggested_new_desiderata` entries exist, but they are mostly one-off, rubric-specific suggestions rather than recurring evidence that the global seven desiderata need revision."
+}

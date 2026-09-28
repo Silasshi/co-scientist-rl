@@ -1,0 +1,5 @@
+{"plan_id": 0, "depth": 3, "methods": 3, "feasibility": 3, "grounding": 1, "total": 10}
+{"plan_id": 1, "depth": 4, "methods": 4, "feasibility": 4, "grounding": 1, "total": 13}
+{"plan_id": 2, "depth": 4, "methods": 4, "feasibility": 4, "grounding": 2, "total": 14}
+{"plan_id": 3, "depth": 6, "methods": 6, "feasibility": 7, "grounding": 3, "total": 22}
+{"plan_id": 4, "depth": 4, "methods": 4, "feasibility": 4, "grounding": 2, "total": 14}

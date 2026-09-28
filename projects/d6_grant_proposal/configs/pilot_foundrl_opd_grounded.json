@@ -1,0 +1,23 @@
+{
+  "_comment": "D6 OPD-grounded pilot (out of paper scope): ai/02_foundational_rl. Run AFTER the OPD pilot shows improvement over the frozen baseline.",
+  "goal_domain": "ai",
+  "goal_name": "02_foundational_rl",
+  "dataset_base": "projects/d6_grant_proposal/dataset",
+  "data_base": "projects/d6_grant_proposal/data",
+  "log_path": "projects/d6_grant_proposal/runs/2026_04_30_pilot_foundrl_opd_grounded",
+  "model_name": "Qwen/Qwen3-30B-A3B",
+  "learning_rate": 5e-5,
+  "n_iter": 16,
+  "n_plans": 8,
+  "max_tokens": 8192,
+  "solution_only_mask": true,
+  "trust_region_alpha": 0.05,
+  "loss_fn_name": "ppo",
+  "ppo_clip_eps": 0.2,
+  "use_grounding": true,
+  "grounding_per_eq_bonus": 0.1,
+  "grounding_per_citation_bonus": 0.05,
+  "cliff_threshold": 0.85,
+  "eval_every": 1,
+  "save_every": 2
+}

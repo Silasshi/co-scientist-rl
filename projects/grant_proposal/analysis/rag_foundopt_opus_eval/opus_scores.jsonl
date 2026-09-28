@@ -1,0 +1,1 @@
+{"goal": "01_foundopt", "variant": "rag_best", "evaluator": "claude-opus-4-7-via-subagent", "depth": 5, "methods": 4, "feasibility": 5, "grounding": 4, "total": 18}

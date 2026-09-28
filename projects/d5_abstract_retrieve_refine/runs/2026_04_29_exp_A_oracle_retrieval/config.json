@@ -1,0 +1,65 @@
+{
+  "model": "Qwen/Qwen3-30B-A3B",
+  "oracle_chars": 72056,
+  "n_samples_per_query": 3,
+  "max_tokens": 1024,
+  "temperature": 0.0,
+  "top_p": 1.0,
+  "auto_verdict": {
+    "Q1_math5_jrs": {
+      "n_samples": 3,
+      "anchor_total": 4,
+      "any_sample_all_anchors": false,
+      "max_anchor_hits": 3,
+      "per_sample_hits": [
+        3,
+        3,
+        3
+      ]
+    },
+    "Q2_math7_grpo": {
+      "n_samples": 3,
+      "anchor_total": 4,
+      "any_sample_all_anchors": true,
+      "max_anchor_hits": 4,
+      "per_sample_hits": [
+        4,
+        4,
+        4
+      ]
+    },
+    "Q3_method9_rsgrpo": {
+      "n_samples": 3,
+      "anchor_total": 4,
+      "any_sample_all_anchors": false,
+      "max_anchor_hits": 3,
+      "per_sample_hits": [
+        3,
+        3,
+        3
+      ]
+    },
+    "Q4_empirical4_aime": {
+      "n_samples": 3,
+      "anchor_total": 4,
+      "any_sample_all_anchors": true,
+      "max_anchor_hits": 4,
+      "per_sample_hits": [
+        4,
+        4,
+        4
+      ]
+    },
+    "Q5_control_no_oracle": {
+      "n_samples": 3,
+      "anchor_total": 4,
+      "any_sample_all_anchors": true,
+      "max_anchor_hits": 4,
+      "per_sample_hits": [
+        4,
+        4,
+        4
+      ]
+    }
+  }
+}

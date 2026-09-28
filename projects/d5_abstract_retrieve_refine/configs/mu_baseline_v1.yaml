@@ -1,0 +1,56 @@
+# D5 μ baseline v1 — canonical config snapshot
+#
+# Apply by passing each field as `config.<key>=<value>` on the chz CLI:
+#   PYTHONPATH=src python -m co_scientist.d5_abstract_retrieve_refine.train_mu_baseline_v1 \
+#     config.log_path=projects/d5_abstract_retrieve_refine/runs/2026_04_25_mu_baseline_v1 \
+#     ... (any non-default overrides)
+#
+# All fields below match Config defaults; this file documents the canonical
+# run. To launch a variant, override on the CLI.
+
+api_profile: "new"
+base_url: null
+
+# Paths
+log_path: "projects/d5_abstract_retrieve_refine/runs/2026_04_25_mu_baseline_v1"
+goal_path: "projects/d5_abstract_retrieve_refine/dataset/research_goal.txt"
+reference_plan_path: "projects/d5_abstract_retrieve_refine/dataset/reference_solution.txt"
+oracle_abstraction_path: "projects/d5_abstract_retrieve_refine/data/smoke_v3_oracle_abstraction.md"
+source_paper_path: "projects/d5_abstract_retrieve_refine/data/source_paper_ttt_discover.md"
+
+# Model
+model_name: "Qwen/Qwen3-30B-A3B"
+lora_rank: 64
+learning_rate: 1.0e-5
+
+# Sampling (Phase 0.5c fix: temp=1.0 + top_p, NO seed)
+n_plans: 8
+max_tokens: 2048
+temperature: 1.0
+top_p: 0.95
+
+# SDPO
+sdpo_scale: 1.0
+sdpo_clip_advantage: 5.0
+anchor_ce_weight: 0.0  # PURE SDPO ablation per user 2026-04-25
+
+# Loop
+n_iter: 10
+eval_every: 2  # iters 0, 2, 4, 6, 8, 10
+n_eval_plans: 8
+save_every: 5
+
+# Critic
+critic_timeout_sec: 900.0  # 15 min
+skip_critic_at_iter0: false
+
+today_date: "2026_04_25"
+seed: 42
+
+# ----- Decision matrix (manual post-run) -----
+# δ baseline:        6.75 /20
+# ε baseline:       12.13 /20
+# μ ≤ 7.75          → STOP D5
+# 7.75 < μ < 9.00   → marginal; investigate
+# 9.00 ≤ μ < 10.13  → continue Phase 0b/1
+# μ ≥ 10.13         → strong; continue

@@ -1,0 +1,35 @@
+{
+  "n_total": 150,
+  "n_valid": 23,
+  "n_failed": 127,
+  "distributions": {
+    "rubric": {
+      "mean": 0.7354037267080745,
+      "std": 0.2195255659242532
+    },
+    "self_eval": {
+      "mean": 0.8275924282756582,
+      "std": 0.12223774665364227
+    },
+    "agnostic": {
+      "mean": 0.820289855072464,
+      "std": 0.09914568913905546
+    }
+  },
+  "correlations_pearson": {
+    "rubric_vs_self_eval": 0.13993486975207903,
+    "rubric_vs_agnostic": -0.1604714650567457,
+    "self_eval_vs_agnostic": 0.40666145230061496
+  },
+  "correlations_spearman": {
+    "rubric_vs_self_eval": 0.21640316205533597,
+    "rubric_vs_agnostic": 0.011857707509881422,
+    "self_eval_vs_agnostic": 0.07312252964426878
+  },
+  "quadrants": {
+    "high_rubric_high_agnostic": 7,
+    "high_rubric_low_agnostic": 5,
+    "low_rubric_high_agnostic": 5,
+    "low_rubric_low_agnostic": 6
+  }
+}

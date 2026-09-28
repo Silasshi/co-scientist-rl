@@ -1,0 +1,4 @@
+{"step": 0, "progress/batch": 0, "rubric/mean": 0.7861160714285714, "prm/mean": 0.0, "opd/mean_kl": 0.0, "advantage/std": 0.02653629916262597}
+{"step": 1, "progress/batch": 1, "rubric/mean": 0.8172767857142857, "prm/mean": 0.0, "opd/mean_kl": 0.0, "advantage/std": 0.0267352938160578}
+{"step": 2, "progress/batch": 2, "rubric/mean": 0.7819642857142857, "prm/mean": 0.0, "opd/mean_kl": 0.0, "advantage/std": 0.03448967126671543}
+{"step": 3, "progress/batch": 3, "rubric/mean": 0.7858035714285714, "prm/mean": 0.0, "opd/mean_kl": 0.0, "advantage/std": 0.04229893089193075}

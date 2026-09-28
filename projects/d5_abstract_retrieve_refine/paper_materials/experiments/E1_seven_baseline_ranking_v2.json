@@ -1,0 +1,255 @@
+{
+  "methodology": "audit_v3 ISOLATED \u2014 8 balanced batches \u00d7 8 parallel Opus subagents, 9-dim per-plan",
+  "source": "runs/2026_04_26_phase2F_audit_isolated/audit_v3_isolated_summary.md",
+  "pairwise_corroboration_source": "paper_materials/experiments/E6_mu_v4_pairwise_corroboration.json (runs/2026_04_27_mu_v4_pairwise/)",
+  "baselines": [
+    {
+      "name": "epsilon",
+      "setup": "frozen Qwen3-235B + reference plan in context",
+      "mean_45": 33.62,
+      "std": 1.93,
+      "min": 32,
+      "max": 37,
+      "distinct": "5/8",
+      "totals": [
+        33,
+        36,
+        32,
+        32,
+        32,
+        32,
+        37,
+        35
+      ]
+    },
+    {
+      "name": "mu_v4",
+      "setup": "plan-level SDPO + critic, lr=5e-5, 4 grad steps, iter 4 (production checkpoint)",
+      "mean_45": 28.0,
+      "std": 2.45,
+      "min": 25,
+      "max": 32,
+      "distinct": "6/8",
+      "totals": [
+        25,
+        25,
+        27,
+        27,
+        28,
+        29,
+        31,
+        32
+      ],
+      "pairwise_vs_sigma": {"wins": 6, "losses": 2, "ties": 0},
+      "pairwise_vs_delta": {"wins": 7, "losses": 1, "ties": 0},
+      "pairwise_vs_alpha": {"wins": 7, "losses": 1, "ties": 0}
+    },
+    {
+      "name": "sigma",
+      "setup": "frozen Qwen3-30B + slim oracle (no training)",
+      "mean_45": 25.25,
+      "std": 2.44,
+      "min": 22,
+      "max": 29,
+      "distinct": "7/8",
+      "totals": [
+        23,
+        22,
+        23,
+        28,
+        27,
+        26,
+        29,
+        24
+      ],
+      "pairwise_vs_mu_v4": {"wins": 2, "losses": 6, "ties": 0}
+    },
+    {
+      "name": "delta",
+      "setup": "frozen Qwen3-30B + reference plan in context",
+      "mean_45": 25.12,
+      "std": 4.31,
+      "min": 17,
+      "max": 30,
+      "distinct": "6/8",
+      "totals": [
+        17,
+        28,
+        27,
+        20,
+        30,
+        23,
+        28,
+        28
+      ],
+      "pairwise_vs_mu_v4": {"wins": 1, "losses": 7, "ties": 0}
+    },
+    {
+      "name": "alpha",
+      "setup": "Opus distillation 5 epochs \u00d7 16 plans",
+      "mean_45": 25.0,
+      "std": 2.06,
+      "min": 21,
+      "max": 28,
+      "distinct": "6/8",
+      "totals": [
+        25,
+        25,
+        23,
+        27,
+        25,
+        26,
+        28,
+        21
+      ],
+      "pairwise_vs_mu_v4": {"wins": 1, "losses": 7, "ties": 0}
+    },
+    {
+      "name": "mu_v2",
+      "setup": "plan-level SDPO + critic, lr=1e-5, 10 iters",
+      "mean_45": 23.88,
+      "std": 1.83,
+      "min": 21,
+      "max": 26,
+      "distinct": "5/8",
+      "totals": [
+        22,
+        22,
+        21,
+        26,
+        25,
+        25,
+        26,
+        24
+      ]
+    },
+    {
+      "name": "beta",
+      "setup": "direct SFT on reference plan",
+      "mean_45": 22.75,
+      "std": 1.98,
+      "min": 21,
+      "max": 26,
+      "distinct": "4/8",
+      "totals": [
+        21,
+        22,
+        23,
+        21,
+        26,
+        21,
+        26,
+        22
+      ]
+    },
+    {
+      "name": "xi",
+      "setup": "frozen Qwen3-30B + goal only (no oracle)",
+      "mean_45": 15.62,
+      "std": 2.87,
+      "min": 12,
+      "max": 20,
+      "distinct": "6/8",
+      "totals": [
+        13,
+        17,
+        12,
+        18,
+        18,
+        12,
+        20,
+        15
+      ]
+    }
+  ],
+  "per_dim_means": {
+    "epsilon": [
+      4.25,
+      4.0,
+      3.75,
+      4.38,
+      4.5,
+      3.38,
+      2.88,
+      4.0,
+      2.5
+    ],
+    "sigma": [
+      3.0,
+      3.5,
+      2.38,
+      3.75,
+      2.62,
+      3.12,
+      2.38,
+      2.0,
+      2.5
+    ],
+    "delta": [
+      3.12,
+      3.0,
+      2.75,
+      3.62,
+      3.25,
+      2.5,
+      2.38,
+      2.5,
+      2.0
+    ],
+    "alpha": [
+      3.0,
+      3.62,
+      2.75,
+      3.62,
+      2.5,
+      3.25,
+      2.25,
+      1.88,
+      2.12
+    ],
+    "mu_v2": [
+      3.0,
+      3.38,
+      2.38,
+      3.62,
+      2.38,
+      3.12,
+      2.12,
+      1.75,
+      2.12
+    ],
+    "beta": [
+      2.75,
+      3.25,
+      2.38,
+      3.62,
+      2.12,
+      3.0,
+      2.12,
+      1.5,
+      2.0
+    ],
+    "xi": [
+      1.62,
+      2.25,
+      1.38,
+      2.62,
+      1.75,
+      1.62,
+      1.62,
+      1.5,
+      1.25
+    ]
+  },
+  "dims_order": [
+    "U1_soundness",
+    "U2_significance",
+    "U3_originality",
+    "U4_clarity",
+    "U5_reproducibility",
+    "T1_necessity",
+    "T2_disentanglement",
+    "T3_compute",
+    "T4_reward_hacking"
+  ]
+}

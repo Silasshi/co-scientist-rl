@@ -1,0 +1,17 @@
+{
+  "base_url": null,
+  "api_profile": null,
+  "model_name": "Qwen/Qwen3-30B-A3B",
+  "lora_rank": 64,
+  "learning_rate": 1e-05,
+  "clip_eps": 0.2,
+  "batch_size": 32,
+  "group_size": 8,
+  "max_tokens": 32,
+  "temperature": 1.5,
+  "max_length": 32768,
+  "save_every": 50,
+  "pairs_file": "data/cpr_pairs_train.jsonl",
+  "val_pairs_file": "data/cpr_pairs_val.jsonl",
+  "log_path": "runs/2026/4/cpr/1"
+}

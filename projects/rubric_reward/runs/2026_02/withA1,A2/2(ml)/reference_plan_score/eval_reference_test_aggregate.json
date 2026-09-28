@@ -1,0 +1,10 @@
+{
+  "split": "test",
+  "n_examples": 685,
+  "rubric/mean": 0.8665090951222338,
+  "rubric/std": 0.12693547280212295,
+  "rubric/min": 0.0,
+  "rubric/max": 1.0,
+  "rubric/median": 0.8971428571428571,
+  "word_count/mean": 551.1664233576643
+}

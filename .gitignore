@@ -1,0 +1,54 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+
+# Notebooks
+.ipynb_checkpoints/
+
+# Local env
+.env
+.venv/
+venv/
+
+# OS/editor
+.DS_Store
+.vscode/
+.idea/
+.claude/
+
+# External repos
+OpenClaw-RL/
+
+# LaTeX build artifacts
+*.aux
+*.bbl
+*.blg
+*.out
+*.synctex.gz
+
+# Large run artifacts (local only)
+runs/2026/
+ARCHIVE/legacy_snapshot/
+
+# Generated indexes (keep)
+!runs/registry/
+!runs/registry/runs_index.csv
+!runs/registry/runs_index.md
+
+# Data placeholders only in git
+data/*
+!data/README.md
+
+# Logs / checkpoints
+*.log
+*.ckpt
+*.pt
+*.bin
+*.safetensors
+analysis/results/refinement_pilot.jsonl
+
+# Keep docs and source tracked
+!docs/
+!src/
+!tools/

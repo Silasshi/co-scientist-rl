@@ -1,0 +1,19 @@
+{
+  "base_url": null,
+  "api_profile": null,
+  "sota_model": "openai/gpt-5.3-thinking",
+  "sota_temperature": 1.0,
+  "sota_max_tokens": 4096,
+  "group_size": 1,
+  "grader_model_name": "Qwen/Qwen3-30B-A3B",
+  "grader_max_tokens": 8192,
+  "grader_temperature": 0.0,
+  "ml_data": true,
+  "batch_size": 2,
+  "max_word_count": 750,
+  "target_word_count": 600,
+  "scale_length_bonus": 120.0,
+  "scaling_factor": 0.08,
+  "min_words": 30,
+  "eval_output_path": "runs/2026/4/eval_sota/gpt53_test"
+}

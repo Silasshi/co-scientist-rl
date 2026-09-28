@@ -1,0 +1,43 @@
+{
+  "runs": [
+    {
+      "name": "mu_v2",
+      "lr": 1e-05,
+      "n_grad": 1,
+      "n_iter": 10,
+      "peak_iter": null,
+      "peak_mean_45": 23.88,
+      "collapse_iter": null,
+      "collapse_mean": null,
+      "verdict": "flat \u2014 no learning, no collapse"
+    },
+    {
+      "name": "mu_v3",
+      "lr": 0.0002,
+      "n_grad": 4,
+      "n_iter": 12,
+      "peak_iter": 0,
+      "peak_mean_45": 24.88,
+      "collapse_iter": 6,
+      "collapse_mean": 14.38,
+      "verdict": "immediate collapse, killed at iter 12"
+    },
+    {
+      "name": "mu_v4",
+      "lr": 5e-05,
+      "n_grad": 4,
+      "n_iter": 8,
+      "peak_iter": 4,
+      "peak_mean_45": 28.0,
+      "collapse_iter": 5,
+      "collapse_mean": 15.62,
+      "verdict": "sweet spot \u2014 peak iter 4, cliff iter 5"
+    }
+  ],
+  "optimization_budget": {
+    "mu_v2": "10 iter \u00d7 1 grad \u00d7 1e-5 = 1e-4",
+    "mu_v3": "20 iter \u00d7 4 grad \u00d7 2e-4 = 1.6e-2 (160\u00d7 v2)",
+    "mu_v4": "20 iter \u00d7 4 grad \u00d7 5e-5 = 4e-3 (40\u00d7 v2)"
+  },
+  "sigma_baseline_ref": 25.25
+}
