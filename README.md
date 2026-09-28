@@ -15,10 +15,19 @@ Author: Yuhong (Silas) Shi, Torr Vision Group, University of Oxford (Dec 2025 �
 | Data | `facebook/research-plan-gen` (ML split; not redistributed here) |
 | **Reproduction** | Held-out rubric score **0.562 → 0.693** (+23% relative) on 640 held-out goals × 8 samples, frozen Qwen3-30B-A3B grader |
 | Extensions | 80+ runs: self-distillation (in-house SDPO-style variants), reward shaping, two-stage refinement, rubric dropout, multi-turn, think-then-solve, critique–revise + RL. **None surpassed the reproduced baseline.** |
-| Main diagnosis | Best-of-8 sampling closes ~91% of the gap between the average plan (0.681) and the reference plan (0.867). The bottleneck is **selection and reward fidelity, not generation**. |
 | Reward hacking | When the policy is optimised against an LLM grader, the proxy reward rises while independent-judge quality falls (grant-proposal study: Qwen reward 0.855 → 0.970, Opus-judged score 19 → 13 / 40). |
 
-Status: **concluded**. The reproduction worked. The extensions were negative or unstable, and the lasting output is the set of diagnostic findings about rubric rewards. See [`shared/analysis/reports/project_conclusion.md`](shared/analysis/reports/project_conclusion.md).
+Status: **concluded**. The reproduction worked; the extensions were negative or unstable. See [`shared/analysis/reports/project_conclusion.md`](shared/analysis/reports/project_conclusion.md).
+
+## Main lesson
+
+Rubric-reward RL is unreliable for open-ended tasks such as research ideation, for three reasons:
+
+1. **Good rubrics are hard to specify.** Open-ended goals admit many valid plans, and a finite rubric cannot cover them.
+2. **Rubric scores do not faithfully measure idea quality.** Goal-specific rubrics largely check the reference plan's particular method, and LLM-graded scores are noisy. Under the same grader, best-of-8 reaches 0.849 against a 0.681 mean (reference 0.867). But the maximum of eight noisy scores is biased upward, so much of that gap is luck of the draw, not hidden capability.
+3. **Rubrics are easy to game.** Optimisation inflates the proxy reward while independent judges see quality fall (see the reward-hacking row above).
+
+Extending RLVR-style training beyond verifiable domains therefore needs carefully designed rewards. This project documents the failure modes; it does not propose a fix.
 
 ## Directions
 
