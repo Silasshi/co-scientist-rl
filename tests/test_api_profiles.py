@@ -7,7 +7,7 @@ SRC_ROOT = Path(__file__).resolve().parents[1] / "src"
 if str(SRC_ROOT) not in sys.path:
     sys.path.insert(0, str(SRC_ROOT))
 
-from co_scientist.trainers import api_profiles
+from co_scientist.shared import api_profiles
 
 
 def test_normalize_api_profile_rejects_empty_name():

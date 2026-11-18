@@ -1,6 +1,6 @@
 import pytest
 
-from tinker_cookbook.recipes.rl_co_scientist.SDPO.SDPO import (
+from co_scientist.rubric_reward.sdpo.train_sdpo import (
     Config,
     build_research_plan_prompt,
     build_self_teacher_prompt,
@@ -63,8 +63,9 @@ def test_self_teacher_prompt_solution_only_instruction():
         successful_previous_rollout=None,
         policy_output_mode="solution_only",
     )
-    assert "ONLY the <solution> tags" in prompt
-    assert "Keep your <think> process brief." not in prompt
+    assert "using ONLY <solution> tags" in prompt
+    assert "First output token must be <solution>" in prompt
+    assert "<think>" not in prompt
 
 
 def test_self_teacher_prompt_think_solution_instruction():
@@ -74,8 +75,9 @@ def test_self_teacher_prompt_think_solution_instruction():
         successful_previous_rollout=None,
         policy_output_mode="think_solution",
     )
-    assert "Remember to use the <think> and <solution> tags." in prompt
-    assert "Keep your <think> process brief." in prompt
+    assert "Return exactly two XML blocks" in prompt
+    assert "Brief reasoning only" in prompt
+    assert "First output token must be <think>" in prompt
 
 
 def test_extract_solution_text_requires_tags():
