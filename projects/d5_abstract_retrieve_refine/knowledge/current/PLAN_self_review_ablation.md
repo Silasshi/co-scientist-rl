@@ -132,7 +132,7 @@ This is a high-leverage diagnostic. Cost is $0 marginal. Run unconditionally bef
 
 ## Critical path files
 
-- v9 trainer (already exists): `src/co_scientist/d5_abstract_retrieve_refine/train_mu_v9_kl_anchor.py`
+- v9 trainer (already exists): `experiments/d5_abstract_retrieve_refine/train_mu_v9_kl_anchor.py`
 - Existing audit dispatcher: `src/co_scientist/d5_abstract_retrieve_refine/audit_v3_isolated.py`
 - Audit rubric: `projects/d5_abstract_retrieve_refine/knowledge/current/AUDIT_RUBRIC_v3.md`
 - Aggregator: `shared/tools/aggregate_audit_partials.py`

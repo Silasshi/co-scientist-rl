@@ -67,7 +67,7 @@ By switching sampler from teacher to student (`opd_mode=True`), the gradient flo
 ## Data pointers
 
 - Stage A (F11 falsification): `runs/2026_04_29_f4_attribution_offline/`
-- **Stage B**: `runs/2026_04_29_f4_stage_b_critique_probe/` (script `src/co_scientist/d5_abstract_retrieve_refine/f4_stage_b_critique_probe.py`)
+- **Stage B**: `runs/2026_04_29_f4_stage_b_critique_probe/` (script `experiments/d5_abstract_retrieve_refine/f4_stage_b_critique_probe.py`)
 - Slim oracle keyword counts: `data/oracles/oracle_v2_2026_04_26_build/slim.md` (grep `SIFT`/`GRPO`/`PUCT`/`MCTS`)
 - F4 original: `paper_materials/findings/F4_critique_token_blindness.md` (mechanism falsified)
 - F13 (OPD fix): `paper_materials/findings/F13_mu_opd_canonical_architecture.md`

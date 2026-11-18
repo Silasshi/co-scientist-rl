@@ -286,7 +286,7 @@ Fixed regardless of §8 branch. Layered eval framework.
 
 **Phase 0 (archived)**:
 - `runs/_archive_pre_realignment_2026_04_25/` — all v1 work
-- `src/co_scientist/d5_abstract_retrieve_refine/smoke_pathway_v1.py` — pathway test orchestrator
+- `experiments/d5_abstract_retrieve_refine/smoke_pathway_v1.py` — pathway test orchestrator
 
 **Realignment (Phase 1)**:
 - `knowledge/current/REVIEWER_STANDARDS_v1.md`
@@ -295,9 +295,9 @@ Fixed regardless of §8 branch. Layered eval framework.
 - `knowledge/current/RUN_CONFIRMATION_TEMPLATE.md`
 
 **Phase 2A-bis (bibliography)**:
-- `src/co_scientist/d5_abstract_retrieve_refine/extract_cite_keys_v1.py` (tex → 90 cite keys)
-- `src/co_scientist/d5_abstract_retrieve_refine/parse_bibtex_v1.py` (bib → resolved)
-- `src/co_scientist/d5_abstract_retrieve_refine/build_bibliography_v2.py` (S2 batch + OpenAlex)
+- `experiments/d5_abstract_retrieve_refine/extract_cite_keys_v1.py` (tex → 90 cite keys)
+- `experiments/d5_abstract_retrieve_refine/parse_bibtex_v1.py` (bib → resolved)
+- `experiments/d5_abstract_retrieve_refine/build_bibliography_v2.py` (S2 batch + OpenAlex)
 - `src/co_scientist/d5_abstract_retrieve_refine/extract_source_paper_v2.py` (LaTeX → md)
 - `data/bibliography/resolved_v2.jsonl` (86 entries)
 - `data/source_paper/v2.md` (~76,300 chars)
@@ -305,7 +305,7 @@ Fixed regardless of §8 branch. Layered eval framework.
 
 **Phase 2B (oracle)**:
 - `src/co_scientist/d5_abstract_retrieve_refine/oracle_prompts_v2.py`
-- `src/co_scientist/d5_abstract_retrieve_refine/build_oracle_v2.py`
+- `experiments/d5_abstract_retrieve_refine/build_oracle_v2.py`
 - `data/oracle_v2.md` (full) / `data/oracle_v2_slim.md` (4096-token fit)
 
 **Phase 2D (realigned trainers)**:
@@ -321,7 +321,7 @@ Fixed regardless of §8 branch. Layered eval framework.
 - `src/co_scientist/shared/audit_prompt_v3.py` (rubric prompt builder)
 
 **Phase 2G (SDPO lr ablation, in flight)**:
-- `src/co_scientist/d5_abstract_retrieve_refine/train_mu_v3.py` (lr=2e-4, killed)
+- `experiments/d5_abstract_retrieve_refine/train_mu_v3.py` (lr=2e-4, killed)
 - `src/co_scientist/d5_abstract_retrieve_refine/train_mu_v4.py` (lr=5e-5, in flight)
 - `runs/2026_04_27_mu_v3/` (collapsed)
 - `runs/2026_04_27_mu_v3_midtrain_audit/` (mid-train PUCT diagnostic)

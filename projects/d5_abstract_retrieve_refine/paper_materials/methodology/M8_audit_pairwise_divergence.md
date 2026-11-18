@@ -149,9 +149,9 @@ Strict 1-plan audits (`audit_v3_isolated_strict_summary.md`):
 - `runs/2026_04_28_phase5_audit_anchor_ce_strict/`
 
 Code:
-- `src/co_scientist/d5_abstract_retrieve_refine/audit_v3_isolated_2way.py` (original 2-plan protocol)
-- `src/co_scientist/d5_abstract_retrieve_refine/audit_v3_isolated_2way_strict.py` (Phase B fork — strict 1-plan)
-- `src/co_scientist/d5_abstract_retrieve_refine/phase5_remediation_pairwise.py` (Phase A — pairwise)
+- `experiments/d5_abstract_retrieve_refine/audit_v3_isolated_2way.py` (original 2-plan protocol)
+- `experiments/d5_abstract_retrieve_refine/audit_v3_isolated_2way_strict.py` (Phase B fork — strict 1-plan)
+- `experiments/d5_abstract_retrieve_refine/phase5_remediation_pairwise.py` (Phase A — pairwise)
 
 ## Citations
 

@@ -84,7 +84,7 @@ for i in "${!CELLS[@]}"; do
     # The Claude Code session running this script is responsible for polling
     # critic_requests/ and dispatching subagents; trainer unblocks when
     # critic_responses/iter_NNN.json appears.
-    PYTHONPATH=src python -m co_scientist.d5_abstract_retrieve_refine.train_mu_v8_d5sdpo \
+    PYTHONPATH=src python experiments/d5_abstract_retrieve_refine/train_mu_v8_d5sdpo.py \
         log_path="projects/d5_abstract_retrieve_refine/runs/2026_04_29_mu_v8_d5sdpo_${cell_name}" \
         n_iter=16 \
         eval_every=1 \

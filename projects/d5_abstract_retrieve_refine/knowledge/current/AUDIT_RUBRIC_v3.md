@@ -198,7 +198,7 @@ close-cluster gap must ALSO be cross-checked by Opus pairwise tournament (≥8
 position-randomized pairs per matchup). See:
 
 - `paper_materials/methodology/M4_audit_isolated_methodology.md` § "Cross-validation discipline"
-- `src/co_scientist/d5_abstract_retrieve_refine/mu_v4_pairwise_v1.py` (reusable runner;
+- `experiments/d5_abstract_retrieve_refine/mu_v4_pairwise_v1.py` (reusable runner;
   fork for any baseline-vs-baseline comparison)
 - `src/co_scientist/shared/opus_pairwise_subagent.py` (file-bus client)
 

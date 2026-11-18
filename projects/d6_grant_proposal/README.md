@@ -74,7 +74,7 @@ PYTHONPATH=src python -m co_scientist.d6_grant_proposal.extract_oracle \
     goal_domain=ai goal_name=02_foundational_rl
 
 # Build slim oracle
-PYTHONPATH=src python -m co_scientist.d6_grant_proposal.extract_oracle_slim \
+PYTHONPATH=src python experiments/d6_grant_proposal/extract_oracle_slim.py \
     goal_domain=ai goal_name=02_foundational_rl
 
 # Run OPD pilot (main contribution arm)
@@ -88,7 +88,7 @@ PYTHONPATH=src python -m co_scientist.d6_grant_proposal.train_grpo \
     log_path=projects/d6_grant_proposal/runs/2026_04_30_pilot_foundrl_grpo
 
 # Run frozen baseline baseline
-PYTHONPATH=src python -m co_scientist.d6_grant_proposal.train_baseline \
+PYTHONPATH=src python experiments/d6_grant_proposal/train_baseline.py \
     goal_domain=ai goal_name=02_foundational_rl
 
 # Audit a checkpoint

@@ -110,7 +110,7 @@ Re-run audit on full eval_rollouts via STRICT 1-plan/subagent dispatch (lesson f
 ```bash
 source shared/tools/use_api_profile.sh new
 mkdir -p projects/d5_abstract_retrieve_refine/runs/2026_04_29_mu_v7_opd_full
-PYTHONPATH=src python -m co_scientist.d5_abstract_retrieve_refine.train_mu_v7_opd \
+PYTHONPATH=src python experiments/d5_abstract_retrieve_refine/train_mu_v7_opd.py \
     log_path=projects/d5_abstract_retrieve_refine/runs/2026_04_29_mu_v7_opd_full \
     n_iter=16 \
     eval_every=1 \

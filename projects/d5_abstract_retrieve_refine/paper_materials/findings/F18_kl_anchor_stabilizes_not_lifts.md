@@ -78,8 +78,8 @@ The KL anchor is doing distribution-level regularization, not advantage-level re
 
 ## Files
 
-- L2 trainer: `src/co_scientist/d5_abstract_retrieve_refine/train_mu_v9_kl_anchor.py`
-- π_oracle SFT trainer: `src/co_scientist/d5_abstract_retrieve_refine/train_pi_oracle_sft.py`
+- L2 trainer: `experiments/d5_abstract_retrieve_refine/train_mu_v9_kl_anchor.py`
+- π_oracle SFT trainer: `experiments/d5_abstract_retrieve_refine/train_pi_oracle_sft.py`
 - π_oracle SFT data: `projects/d5_abstract_retrieve_refine/dataset/oracle_grounded_sft.jsonl` (30 plans × 3 anchor groups)
 - L2 pilot run: `projects/d5_abstract_retrieve_refine/runs/2026_04_29_mu_v9_kl_anchor_pilot/`
 - Joint RESULTS: `projects/d5_abstract_retrieve_refine/knowledge/current/RESULTS_layer1_vs_layer2.md`

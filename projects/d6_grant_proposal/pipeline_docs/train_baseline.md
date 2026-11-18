@@ -1,6 +1,6 @@
 # train_baseline
 
-**Source:** `src/co_scientist/d6_grant_proposal/train_baseline.py` (~227 lines)
+**Source:** `experiments/d6_grant_proposal/train_baseline.py` (~227 lines)
 **Stage:** Refine — frozen baseline (no gradient updates)
 
 ## Purpose
@@ -33,7 +33,7 @@ The frozen-model lower bound. Any trainer claiming "improvement" must beat the b
 ## Run
 
 ```bash
-PYTHONPATH=src python -m co_scientist.d6_grant_proposal.train_baseline \
+PYTHONPATH=src python experiments/d6_grant_proposal/train_baseline.py \
     goal_domain=ai goal_name=02_foundational_rl \
     log_path=projects/d6_grant_proposal/runs/2026_04_30_pilot_foundrl_baseline
 ```

@@ -35,7 +35,7 @@ inference setup, no retraining — and observes:
 - **Pairwise**: 8 strict 1-pair Opus subagents per goal × 3 goals = 24 pairs total. Forced 4/8 perfect A-position balance. M8-compliant (no M8 anchoring confound).
 - **Cost**: ~$8 (24 Opus pairwise calls + 3 inference calls). Wall ~10 min for inference + ~5 min pairwise (parallel).
 
-Code: `src/co_scientist/d5_abstract_retrieve_refine/mu_opd_xgoal_inference.py` (~140-line inference-only fork).
+Code: `experiments/d5_abstract_retrieve_refine/mu_opd_xgoal_inference.py` (~140-line inference-only fork).
 
 ## Position-bias check (M8 standing protocol)
 
@@ -112,7 +112,7 @@ Combined evidence: pairwise 22/24 directional + audit /45 +4.0 strict isolated. 
 
 ## Data pointers
 
-- Inference script: `src/co_scientist/d5_abstract_retrieve_refine/mu_opd_xgoal_inference.py`
+- Inference script: `experiments/d5_abstract_retrieve_refine/mu_opd_xgoal_inference.py`
 - Per-goal μ-OPD inference: `runs/2026_04_29_xgoal_<goal>_mu_opd/` × 3
 - Pairwise: `runs/2026_04_29_xgoal_mu_opd_vs_muv4_pairwise/` (24 pairs + matchups_meta.json)
 - F7 (now reframed): `paper_materials/findings/F7_cross_goal_followup_validation.md`

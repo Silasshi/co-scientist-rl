@@ -157,7 +157,7 @@ Why split between `src/` and `projects/`: the codebase convention is one Python 
 **Objective:** Materialise a standalone D6 dataset of Opus-scored grant proposals so signal correlation can be measured without depending on D4-v2 paths.
 
 **Actions:**
-- Wrote `src/co_scientist/d6_grant_proposal/build_validation_dataset.py`
+- Wrote `experiments/d6_grant_proposal/build_validation_dataset.py`
 - Read 15 stratified FoundOpt proposals + Opus 4.7 grades from `projects/grant_proposal_v2/analysis/grader_panel_v8/`
 - Emitted to `projects/d6_grant_proposal/dataset/signal_validation/foundopt_opus/`
 

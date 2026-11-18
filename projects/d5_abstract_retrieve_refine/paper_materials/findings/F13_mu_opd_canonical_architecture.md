@@ -119,7 +119,7 @@ Joint paper narrative: "**Privileged-observation distillation transfers structur
 
 ## Data pointers
 
-- Trainer: `src/co_scientist/d5_abstract_retrieve_refine/train_mu_v7_opd.py` (~150-line diff vs train_mu_v4)
+- Trainer: `experiments/d5_abstract_retrieve_refine/train_mu_v7_opd.py` (~150-line diff vs train_mu_v4)
 - Smoke: `runs/2026_04_29_mu_v7_opd_smoke/`
 - Full: `runs/2026_04_29_mu_v7_opd_full/`
 - Strict 9-dim audit: `runs/2026_04_29_mu_v7_opd_full_audit_v3/audit_v3_summary.json`

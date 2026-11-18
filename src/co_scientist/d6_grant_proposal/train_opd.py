@@ -263,7 +263,7 @@ def main(config: Config):
             f"Run extract_oracle.py and extract_oracle_slim.py first:\n"
             f"  PYTHONPATH=src python -m co_scientist.d6_grant_proposal.extract_oracle "
             f"goal_domain={config.goal_domain} goal_name={config.goal_name}\n"
-            f"  PYTHONPATH=src python -m co_scientist.d6_grant_proposal.extract_oracle_slim "
+            f"  PYTHONPATH=src python experiments/d6_grant_proposal/extract_oracle_slim.py "
             f"goal_domain={config.goal_domain} goal_name={config.goal_name}"
         )
     oracle = oracle_path.read_text().strip()

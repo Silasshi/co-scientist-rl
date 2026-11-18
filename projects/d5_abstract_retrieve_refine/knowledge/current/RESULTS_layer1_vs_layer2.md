@@ -181,8 +181,8 @@ Mechanism: SFT data is grounded across all 3 axes by construction → KL pulls m
 - L1 pilot: `projects/d5_abstract_retrieve_refine/runs/2026_04_29_mu_v9_grounded_pilot/`
 - L2 pilot: `projects/d5_abstract_retrieve_refine/runs/2026_04_29_mu_v9_kl_anchor_pilot/`
 - π_oracle SFT data: `projects/d5_abstract_retrieve_refine/dataset/oracle_grounded_sft.jsonl`
-- L1 trainer: `src/co_scientist/d5_abstract_retrieve_refine/train_mu_v9_grounded.py`
-- L2 trainer: `src/co_scientist/d5_abstract_retrieve_refine/train_mu_v9_kl_anchor.py`
-- π_oracle SFT trainer: `src/co_scientist/d5_abstract_retrieve_refine/train_pi_oracle_sft.py`
+- L1 trainer: `experiments/d5_abstract_retrieve_refine/train_mu_v9_grounded.py`
+- L2 trainer: `experiments/d5_abstract_retrieve_refine/train_mu_v9_kl_anchor.py`
+- π_oracle SFT trainer: `experiments/d5_abstract_retrieve_refine/train_pi_oracle_sft.py`
 - Verifier module: `src/co_scientist/d5_abstract_retrieve_refine/verifier_grounded_reward_v1.py`
 - Gold set: `projects/d5_abstract_retrieve_refine/dataset/v9_gold_equations.json`

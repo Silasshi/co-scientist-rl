@@ -1,7 +1,7 @@
 # D5 μ baseline v1 — canonical config snapshot
 #
 # Apply by passing each field as `config.<key>=<value>` on the chz CLI:
-#   PYTHONPATH=src python -m co_scientist.d5_abstract_retrieve_refine.train_mu_baseline_v1 \
+#   PYTHONPATH=src python experiments/d5_abstract_retrieve_refine/train_mu_baseline_v1.py \
 #     config.log_path=projects/d5_abstract_retrieve_refine/runs/2026_04_25_mu_baseline_v1 \
 #     ... (any non-default overrides)
 #

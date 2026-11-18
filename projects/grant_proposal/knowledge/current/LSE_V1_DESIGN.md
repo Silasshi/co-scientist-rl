@@ -20,5 +20,5 @@ This aligns with LSE: LSE trains an editing policy (context → better context).
 
 ## Code
 
-- Trainer: `src/co_scientist/grant_proposal/train_lse_v1.py`
+- Trainer: `experiments/grant_proposal/train_lse_v1.py`
 - Runs: `projects/grant_proposal/runs/lse_v1/`

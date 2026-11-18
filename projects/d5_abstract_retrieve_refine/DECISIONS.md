@@ -559,8 +559,8 @@ n=8 per condition is too small for 95% CI to clear 0 on any single goal. Mean di
 - F7 finding: [`paper_materials/findings/F7_cross_goal_followup_validation.md`](paper_materials/findings/F7_cross_goal_followup_validation.md)
 - Per-goal raw plans: `runs/2026_04_28_xgoal_{meta_ttl,tt_control,tool_verification_ttrl}_{sigma,mu}/buffer.jsonl`
 - Per-goal audit responses + summaries: `runs/2026_04_28_xgoal_*_audit/audit_*` (24 batch JSONs + 3 summaries)
-- Inference harness: `src/co_scientist/d5_abstract_retrieve_refine/baseline_frozen_v2.py` (variant=mu_inference, commit `8dbf837`)
-- Audit pipeline: `src/co_scientist/d5_abstract_retrieve_refine/audit_v3_isolated_2way.py`
+- Inference harness: `experiments/d5_abstract_retrieve_refine/baseline_frozen_v2.py` (variant=mu_inference, commit `8dbf837`)
+- Audit pipeline: `experiments/d5_abstract_retrieve_refine/audit_v3_isolated_2way.py`
 - Subagent prompt (shared): `runs/2026_04_28_xgoal_audit_subagent_prompt.md`
 
 ---
@@ -1241,7 +1241,7 @@ Opus oracle extraction script, audit_v3 prompt + parser, daemon v3 addendum, fre
 **Artifacts**:
 - `runs/2026_04_25_pairwise_v1/fair_pairwise_summary.md` — full decision-matrix report
 - `runs/2026_04_25_pairwise_v1/pairwise_responses/{mu_vs_smokeA, mu_vs_smokeB, alpha_vs_smokeB, beta_vs_smokeB, smokeA_vs_smokeB}.json`
-- Code: `src/co_scientist/d5_abstract_retrieve_refine/fair_pairwise_v1.py`
+- Code: `experiments/d5_abstract_retrieve_refine/fair_pairwise_v1.py`
 
 ---
 
@@ -1304,7 +1304,7 @@ Opus oracle extraction script, audit_v3 prompt + parser, daemon v3 addendum, fre
 - `runs/2026_04_25_audit_v2_validation/audit_log_v2.jsonl` (per-plan v2 scores)
 - `runs/2026_04_25_audit_v2_validation/audit_responses/` (iter 2 prompt responses)
 - `runs/2026_04_25_audit_v2_validation/audit_responses_v2try1/` (iter 1 archive for diff)
-- Code: `src/co_scientist/shared/audit_prompt_v2.py`, `src/co_scientist/d5_abstract_retrieve_refine/validate_audit_v2.py`
+- Code: `experiments/shared/audit_prompt_v2.py`, `experiments/d5_abstract_retrieve_refine/validate_audit_v2.py`
 - Daemon spec: `projects/d5_abstract_retrieve_refine/scripts/opus_critic_audit_daemon_v2_addendum.md`
 
 **Methodology insight (publishable)**: A 4×1-5 absolute rubric with anti-pattern penalty cannot achieve within-tier discrimination once scaffold-density saturates. Pairwise tournaments are required for fine-grained long-form generation evaluation when comparing similarly-scaled models. Surface-form bias in absolute audits is real and reproducible (3/7 inversions on the same plans, fixed by pairwise).
@@ -1467,7 +1467,7 @@ Three substance tiers — clean separation:
 **Owner**: Yuhong Shi
 **Artifacts**:
 - `runs/2026_04_25_pairwise_v1/{matchups_meta.json, pairwise_summary.md, pairwise_requests/, pairwise_responses/}`
-- Code: `src/co_scientist/d5_abstract_retrieve_refine/pairwise_prefs_v1.py`, `src/co_scientist/shared/opus_pairwise_subagent.py`
+- Code: `experiments/d5_abstract_retrieve_refine/pairwise_prefs_v1.py`, `src/co_scientist/shared/opus_pairwise_subagent.py`
 
 ---
 
@@ -1635,7 +1635,7 @@ Three substance tiers — clean separation:
 
 **Artifacts**:
 - `runs/2026_04_baseline_delta_epsilon/{buffer.jsonl, config_delta.json, config_epsilon.json, opus_depth_audit_d3canonical.json, opus_audit_delta_epsilon_summary.md}`
-- `src/co_scientist/d5_abstract_retrieve_refine/baseline_delta_epsilon.py`
+- `experiments/d5_abstract_retrieve_refine/baseline_delta_epsilon.py`
 
 ---
 
@@ -1791,8 +1791,8 @@ Three substance tiers — clean separation:
    - `reference_solution.txt` (6610 bytes)
    - `perturbations/` (17 perturbation variants of reference plan, ~100 KB total — for Phase 4 robustness)
 4. Updated D5 code paths to use D5 dataset (was: `projects/ttt_discover/analysis/sanity_check/...`):
-   - `src/co_scientist/d5_abstract_retrieve_refine/smoke_pathway_v1.py` (Config defaults)
-   - `src/co_scientist/d5_abstract_retrieve_refine/smoke_pathway_v1_score.py` (Config defaults)
+   - `experiments/d5_abstract_retrieve_refine/smoke_pathway_v1.py` (Config defaults)
+   - `experiments/d5_abstract_retrieve_refine/smoke_pathway_v1_score.py` (Config defaults)
 5. Updated D5 harness docs to remove "12-goal" / "grant_proposal symlink" references:
    - STATUS.md (Next Concrete Action section, key design commitments)
    - README.md (Dataset section)

@@ -49,15 +49,15 @@ Oracle, gold files, and pilot training not yet run.
 1. Build oracle + slim oracle (ai/02_foundational_rl)
    PYTHONPATH=src python -m co_scientist.d6_grant_proposal.extract_oracle \
        goal_domain=ai goal_name=02_foundational_rl
-   PYTHONPATH=src python -m co_scientist.d6_grant_proposal.extract_oracle_slim \
+   PYTHONPATH=src python experiments/d6_grant_proposal/extract_oracle_slim.py \
        goal_domain=ai goal_name=02_foundational_rl
 
 2. Build gold file (for OPD-grounded)
-   PYTHONPATH=src python -m co_scientist.d6_grant_proposal.extract_gold \
+   PYTHONPATH=src python experiments/d6_grant_proposal/extract_gold.py \
        goal_domain=ai goal_name=02_foundational_rl
 
 3. Run frozen baseline (frozen model)
-   PYTHONPATH=src python -m co_scientist.d6_grant_proposal.train_baseline \
+   PYTHONPATH=src python experiments/d6_grant_proposal/train_baseline.py \
        goal_domain=ai goal_name=02_foundational_rl
 
 4. Run OPD pilot [concurrent with GRPO]
@@ -75,7 +75,7 @@ Oracle, gold files, and pilot training not yet run.
    → OPD ≫ baseline+0.02: paper claim corroborated; OPD-grounded remains optional/out of scope
 
 7. [Out of scope; only if needed] Run OPD-grounded pilot
-   PYTHONPATH=src python -m co_scientist.d6_grant_proposal.train_opd_grounded \
+   PYTHONPATH=src python experiments/d6_grant_proposal/train_opd_grounded.py \
        goal_domain=ai goal_name=02_foundational_rl \
        log_path=projects/d6_grant_proposal/runs/2026_04_30_pilot_foundrl_opd_grounded
 ```

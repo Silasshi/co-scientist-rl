@@ -17,7 +17,7 @@
 
 ### 1. Signal Set
 - **D4-v7 standard**: G1-G13, 12 signals, 1-5 scale. Uses `dataset/goals/01_foundopt/` etc.
-- **Better Reward**: R1-R8, 8 signals, 1-10 scale. Uses `dataset/goals/01_foundopt_v2/` with `custom_signal_module=co_scientist.shared.foundopt_rubric_v1`.
+- **Better Reward**: R1-R8, 8 signals, 1-10 scale. Uses `dataset/goals/01_foundopt_v2/` with `custom_signal_module=experiments/shared/foundopt_rubric_v1.py`.
 - **Legacy v5/v6**: Early prototypes, missing goal_dir in some configs. Not usable for comparison.
 
 ### 2. Critique Mode

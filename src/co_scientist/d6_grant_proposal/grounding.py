@@ -81,7 +81,7 @@ def load_gold(gold_path: str | Path) -> dict:
         raise FileNotFoundError(
             f"Gold file not found at {path}. "
             "Run extract_gold.py first:\n"
-            "  PYTHONPATH=src python -m co_scientist.d6_grant_proposal.extract_gold "
+            "  PYTHONPATH=src python experiments/d6_grant_proposal/extract_gold.py "
             "goal_domain=<domain> goal_name=<name>"
         )
     return json.loads(path.read_text())

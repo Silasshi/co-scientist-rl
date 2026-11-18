@@ -95,7 +95,7 @@ discriminate one plan against another) penalize.
 signal) MUST be cross-checked by Opus pairwise tournament before being claimed
 as a paper result.
 
-- Reusable runner: `src/co_scientist/d5_abstract_retrieve_refine/mu_v4_pairwise_v1.py`
+- Reusable runner: `experiments/d5_abstract_retrieve_refine/mu_v4_pairwise_v1.py`
 - File-bus client: `src/co_scientist/shared/opus_pairwise_subagent.py`
 - Cost per matchup: ~$4 (8 pairs × 1 Opus call/pair)
 - Recommended n: 8 pairs minimum for FLAG-vs-PASS distinction; 16 for tight CI

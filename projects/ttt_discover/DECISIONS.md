@@ -346,7 +346,7 @@ PIPELINE.md.
   `build_whole_plan_revision_prompt`, `build_per_signal_context`,
   revise-loop CR-v7 branch, 8-datum loss construction,
   `per_signal_critiques` on buffer entries.
-- `src/co_scientist/ttt_discover/train_pure_revision.py`,
+- `experiments/ttt_discover/train_pure_revision.py`,
   `src/co_scientist/ttt_discover/train_7signal_vector.py` — tinker
   API replacement only.
 - `tests/test_cr_v7_per_signal.py` — 13 new unit tests.

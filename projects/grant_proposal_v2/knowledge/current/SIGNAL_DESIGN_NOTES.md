@@ -135,7 +135,7 @@ v8 rubric stops Goodharting.
 
 Separate signal set used in "Better Reward" experiments (2026-04-20):
 - 8 signals (R1-R8), 1-10 scale
-- Module: `co_scientist.shared.foundopt_rubric_v1`
+- Module: `experiments/shared/foundopt_rubric_v1.py`
 - Goal: `dataset/goals/01_foundopt_v2/`
 - **NOT comparable to D4-v7** (different signals, different scale, different rubric text)
 - Results: 235B scored 26-29 Opus, 30B scored 12 Opus (but confounded with model scale)

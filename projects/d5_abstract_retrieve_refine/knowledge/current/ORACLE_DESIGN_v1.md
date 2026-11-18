@@ -110,7 +110,7 @@ After Phase 1C (archive + protocol setup) completes, Phase 2 will:
 
 1. **Phase 0b — bibliography fetch**: extend `src/co_scientist/shared/paper_retrieval.py` with `fetch_paper_bibliography(arxiv_id)` via S2 API (`/paper/arxiv:{id}/references?fields=title,authors,year,abstract,tldr,externalIds`). Fetch TTT-Discover (arxiv 2601.16175) backward refs. Store as `projects/d5_abstract_retrieve_refine/data/bibliography/resolved_v1.jsonl`.
 2. **Identify top-5 central papers** for full-text fetch: highest in-citation count among the bibliography (proxy for centrality), or hand-curate if obvious (likely AlphaZero, AlphaEvolve, ReST, Voyager, MCTS classic).
-3. **Multi-round Opus extraction script**: `src/co_scientist/d5_abstract_retrieve_refine/build_oracle_v2.py`:
+3. **Multi-round Opus extraction script**: `experiments/d5_abstract_retrieve_refine/build_oracle_v2.py`:
    - Round 1 (cold): per paper, Opus subagent extracts 0-3 items per category from title+abstract+TLDR (or full text for top 5)
    - Rounds 2-3 (refine): Opus sees prior round's accumulated state + paper, refines with deduplication
    - Output: `projects/d5_abstract_retrieve_refine/data/oracles/oracle_v2_2026_04_26_build/final.md` (replaces `smoke_v3_oracle_abstraction.md` for new runs)

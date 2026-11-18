@@ -4,7 +4,7 @@
 # hypothesis against v7 C2/C3/C4 baseline (Qwen3-30B-A3B).
 #
 # v10 rubric: v8 base + G4/G10 from v9 (with length caps) + relaxed v9 G11/G12/G13.
-# See src/co_scientist/shared/grant_rubric_v10.py and
+# See experiments/shared/grant_rubric_v10.py and
 #     .claude/plans/quirky-herding-emerson.md (approved 2026-04-23).
 
 set -e

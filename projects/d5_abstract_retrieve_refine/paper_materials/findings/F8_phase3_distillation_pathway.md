@@ -318,7 +318,7 @@ the source paper as carefully as Opus.
 | Step 2.5 pairwise summary | `runs/2026_04_28_step2_5_pairwise/step2_5_pairwise_summary.md` |
 | Smoke A summary | `runs/2026_04_28_smoke_a_critique_corr/` |
 | INVALIDATED κ smoke (cold-start, do not cite) | `runs/2026_04_28_kappa_v1_smoke/` |
-| Trainer code (production) | `src/co_scientist/d5_abstract_retrieve_refine/train_tau_v1.py` |
+| Trainer code (production) | `experiments/d5_abstract_retrieve_refine/train_tau_v1.py` |
 | Plan v4 prompt | `kappa_prompts_v1.py` `_KAPPA_PLAN_FOOTER_V4` |
 | Distillation prompts | `kappa_prompts_v1.py` `_DISTILL_FOOTER` (verbatim-preserve) |
 | Methodology lesson | `paper_materials/methodology/M7_self_review_failure.md` |

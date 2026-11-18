@@ -130,7 +130,7 @@ Diagnostics that must be sane before declaring PASS:
 
 ```bash
 source shared/tools/use_api_profile.sh new
-PYTHONPATH=src python -m co_scientist.d5_abstract_retrieve_refine.train_mu_v7_opd \
+PYTHONPATH=src python experiments/d5_abstract_retrieve_refine/train_mu_v7_opd.py \
     log_path=projects/d5_abstract_retrieve_refine/runs/2026_04_29_mu_v7_opd_smoke \
     n_iter=4 \
     eval_every=1 \

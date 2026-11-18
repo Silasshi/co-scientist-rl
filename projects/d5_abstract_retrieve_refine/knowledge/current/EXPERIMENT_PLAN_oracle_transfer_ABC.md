@@ -46,7 +46,7 @@ explicitly instructed?
   check)
 
 ### Implementation
-New script: `src/co_scientist/d5_abstract_retrieve_refine/exp_A_oracle_retrieval.py`
+New script: `experiments/d5_abstract_retrieve_refine/exp_A_oracle_retrieval.py`
 - chz config with oracle_path, query_set
 - Tinker sampling client with frozen base
 - Write `runs/2026_04_29_exp_A_oracle_retrieval/responses/query_N_sample_K.json`
@@ -87,7 +87,7 @@ increase monotonically across training iters?
 - Per iter: report mean ± SE across 8 plans. Plot 6 trajectories on one chart.
 
 ### Implementation
-New script: `src/co_scientist/d5_abstract_retrieve_refine/exp_B_ngram_overlap.py`
+New script: `experiments/d5_abstract_retrieve_refine/exp_B_ngram_overlap.py`
 - chz config with run_dirs list, reference_path
 - Read each `buffer.jsonl`, extract `<solution>` per plan
 - Compute 4-gram Jaccard vs reference corpus

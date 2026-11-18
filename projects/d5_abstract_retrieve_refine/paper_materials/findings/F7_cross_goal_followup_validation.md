@@ -180,9 +180,9 @@ fewer threads.
 ## Reproducibility / artifact pointers
 
 - Pre-registration: `projects/d5_abstract_retrieve_refine/DECISIONS.md` (2026-04-26 entry)
-- Inference harness: `src/co_scientist/d5_abstract_retrieve_refine/baseline_frozen_v2.py`
+- Inference harness: `experiments/d5_abstract_retrieve_refine/baseline_frozen_v2.py`
   (variant=mu_inference, sampler_path config field added in commit `8dbf837`)
-- Audit pipeline: `src/co_scientist/d5_abstract_retrieve_refine/audit_v3_isolated_2way.py`
+- Audit pipeline: `experiments/d5_abstract_retrieve_refine/audit_v3_isolated_2way.py`
 - Shared subagent prompt: `runs/2026_04_28_xgoal_audit_subagent_prompt.md`
 - Per-goal raw plans: `runs/2026_04_28_xgoal_{name}_{sigma|mu}/buffer.jsonl`
 - Per-goal audit responses: `runs/2026_04_28_xgoal_{name}_audit/audit_responses/batch_*.json`
@@ -311,6 +311,6 @@ Strict 1-plan corroboration (Phase B, 2026-04-27):
 - 80 subagents (5 audits × 16 plans), 8 σ' + 8 μ' interleaved per goal
 
 Code:
-- `src/co_scientist/d5_abstract_retrieve_refine/audit_v3_isolated_2way_strict.py` (Phase B fork)
-- `src/co_scientist/d5_abstract_retrieve_refine/phase5_remediation_pairwise.py` (Phase A)
+- `experiments/d5_abstract_retrieve_refine/audit_v3_isolated_2way_strict.py` (Phase B fork)
+- `experiments/d5_abstract_retrieve_refine/phase5_remediation_pairwise.py` (Phase A)
 - Methodology doc: `paper_materials/methodology/M8_audit_pairwise_divergence.md`

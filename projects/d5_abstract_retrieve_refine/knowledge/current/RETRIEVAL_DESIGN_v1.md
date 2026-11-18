@@ -223,8 +223,8 @@ filter). 3 batches × 60 items × ~12K tokens fits 40K context with 24K margin.
 |---|---|
 | `src/co_scientist/d5_abstract_retrieve_refine/oracle_batch_helper_v1.py` | DONE (Step 0) |
 | `src/co_scientist/d5_abstract_retrieve_refine/kappa_prompts_v1.py` | TODO Step 2a |
-| `src/co_scientist/d5_abstract_retrieve_refine/train_tau_v1.py` | TODO Step 2a |
-| `src/co_scientist/d5_abstract_retrieve_refine/train_kappa_v1.py` | TODO Step 3 |
+| `experiments/d5_abstract_retrieve_refine/train_tau_v1.py` | TODO Step 2a |
+| `experiments/d5_abstract_retrieve_refine/train_kappa_v1.py` | TODO Step 3 |
 | `src/co_scientist/d5_abstract_retrieve_refine/kappa_pairwise_v1.py` | TODO Step 3 (skeleton) / Step 6 (use) |
 | `paper_materials/findings/F8_phase3_distillation_pathway.md` | TODO Step 7a |
 | `paper_materials/experiments/E7_phase3_kappa_results.json` | TODO Step 7a |

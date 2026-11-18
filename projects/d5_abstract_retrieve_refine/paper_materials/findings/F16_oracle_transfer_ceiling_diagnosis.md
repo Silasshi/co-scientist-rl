@@ -1,7 +1,7 @@
 # F16 — Oracle transfer ceiling: critique-conditioned self-distillation reweights existing priors but does not internalize oracle content
 
 *Filed 2026-04-28. Hypothesis-stage diagnosis grounded in code reading
-(`src/co_scientist/d5_abstract_retrieve_refine/train_mu_v8_d5sdpo.py:393-473`)
+(`experiments/d5_abstract_retrieve_refine/train_mu_v8_d5sdpo.py:393-473`)
 and oracle inspection (`projects/d5_abstract_retrieve_refine/data/oracles/
 oracle_v2_2026_04_26_build/slim.md`). Experimental falsification deferred to
 the ABC experiment plan (`knowledge/current/EXPERIMENT_PLAN_oracle_transfer_ABC.md`).*
@@ -232,7 +232,7 @@ larger LoRA / more iters).
 
 ## Files / sources
 
-- Trainer code: `src/co_scientist/d5_abstract_retrieve_refine/train_mu_v8_d5sdpo.py:315-475`
+- Trainer code: `experiments/d5_abstract_retrieve_refine/train_mu_v8_d5sdpo.py:315-475`
 - Prompt builders: `src/co_scientist/d5_abstract_retrieve_refine/mu_prompts_v8.py:48-100`
 - Oracle: `projects/d5_abstract_retrieve_refine/data/oracles/oracle_v2_2026_04_26_build/slim.md`
 - Critic responses (all cells × all iters):

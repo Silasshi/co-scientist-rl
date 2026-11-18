@@ -46,7 +46,7 @@ But the explanation is NOT gradient flooding. The gradient does reach content to
 - **Cost**: ~$3 (Tinker logprob compute only; NO Opus, NO training).
 - **Wall**: ~30 min.
 
-Full code: `src/co_scientist/d5_abstract_retrieve_refine/f4_attribution_offline.py`. Output: `runs/2026_04_29_f4_attribution_offline/f4_attribution_summary.json`.
+Full code: `experiments/d5_abstract_retrieve_refine/f4_attribution_offline.py`. Output: `runs/2026_04_29_f4_attribution_offline/f4_attribution_summary.json`.
 
 ## Implication for paper
 
@@ -60,7 +60,7 @@ The reframe is **stronger** than F4: prefix-prior lock-in unifies F3/F7/F9 NULLs
 
 ## Data pointers
 
-- Stage A script: `src/co_scientist/d5_abstract_retrieve_refine/f4_attribution_offline.py`
+- Stage A script: `experiments/d5_abstract_retrieve_refine/f4_attribution_offline.py`
 - Stage A summary: `runs/2026_04_29_f4_attribution_offline/f4_attribution_summary.json`
 - F4 (original, now falsified): `paper_materials/findings/F4_critique_token_blindness.md`
 - F12 (Stage B mechanism): `paper_materials/findings/F12_prefix_prior_lock_in.md`

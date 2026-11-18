@@ -60,7 +60,7 @@ goal+oracle (no critique) ────┘                                       
 
 ```bash
 source shared/tools/use_api_profile.sh new
-PYTHONPATH=src python -m co_scientist.d5_abstract_retrieve_refine.f4_attribution_offline \
+PYTHONPATH=src python experiments/d5_abstract_retrieve_refine/f4_attribution_offline.py \
     out_path=projects/d5_abstract_retrieve_refine/runs/2026_04_29_f4_attribution_offline \
     target_iter=2 \
     mu_v4_run=projects/d5_abstract_retrieve_refine/runs/2026_04_27_mu_v4

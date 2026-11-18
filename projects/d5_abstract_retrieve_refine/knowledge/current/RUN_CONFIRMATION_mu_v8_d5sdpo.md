@@ -3,7 +3,7 @@
 **Date filed**: 2026-04-28 (revised from earlier draft after user identified critique-lag bug)
 **Status**: AWAITING USER "yes go" approval per RUN_CONFIRMATION_TEMPLATE
 **Plan**: `/home/silas/.claude/plans/snug-dreaming-yao.md` (μ-v8 d5sdpo)
-**Trainer**: `src/co_scientist/d5_abstract_retrieve_refine/train_mu_v8_d5sdpo.py` (NEW, ported)
+**Trainer**: `experiments/d5_abstract_retrieve_refine/train_mu_v8_d5sdpo.py` (NEW, ported)
 
 > **Algorithm framing (truthful)**: μ-v8 d5sdpo is a **D5 in-house SDPO-flavor
 > variant**: on-policy IS-loss / PPO-clip with critique-on-current-rollout.
@@ -19,7 +19,7 @@
 
 - **Run-dir naming**: `2026_04_29_mu_v8_d5sdpo_<cell>` where `<cell>` ∈ {sigma_v8, base, A, B, C, D, E, F, G}
 - **Greek-letter family**: μ-v8 (training) + σ_v8 (re-baseline)
-- **Trainer file**: `src/co_scientist/d5_abstract_retrieve_refine/train_mu_v8_d5sdpo.py` (fork of `train_mu_v7_opd.py` + 4 changes)
+- **Trainer file**: `experiments/d5_abstract_retrieve_refine/train_mu_v8_d5sdpo.py` (fork of `train_mu_v7_opd.py` + 4 changes)
 - **Prompt module**: `src/co_scientist/d5_abstract_retrieve_refine/mu_prompts_v8.py` (NEW; 900/1100-word footer)
 - **Estimated wall-clock**: ~5 working days
 - **Estimated cost**: ~$615 (full grid)

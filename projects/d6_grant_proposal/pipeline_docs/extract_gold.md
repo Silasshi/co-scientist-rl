@@ -1,6 +1,6 @@
 # extract_gold
 
-**Source:** `src/co_scientist/d6_grant_proposal/extract_gold.py` (~146 lines)
+**Source:** `experiments/d6_grant_proposal/extract_gold.py` (~146 lines)
 **Stage:** Extract (one-time per goal, OPD-grounded only)
 
 ## Purpose
@@ -35,7 +35,7 @@ Extract verifiable equations and citations from `reference_proposal.md` to produ
 ## Run
 
 ```bash
-PYTHONPATH=src python -m co_scientist.d6_grant_proposal.extract_gold \
+PYTHONPATH=src python experiments/d6_grant_proposal/extract_gold.py \
     goal_domain=ai goal_name=02_foundational_rl
 ```
 

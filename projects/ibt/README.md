@@ -12,10 +12,10 @@ Iterative dialogue-style training where the model generates a plan, receives fee
 ## Code
 
 - `src/co_scientist/ibt/train_ibt.py` — Main IBT trainer
-- `src/co_scientist/ibt/train_ibt_v2.py` — IBT v2 variant
-- `src/co_scientist/ibt/baseline_grpo.py` — GRPO baseline for comparison
-- `src/co_scientist/ibt/baseline_training_free.py` — Training-free baseline
-- `src/co_scientist/ibt/train_self_calibration.py` — Self-calibration variant
+- `experiments/ibt/train_ibt_v2.py` — IBT v2 variant
+- `experiments/ibt/baseline_grpo.py` — GRPO baseline for comparison
+- `experiments/ibt/baseline_training_free.py` — Training-free baseline
+- `experiments/ibt/train_self_calibration.py` — Self-calibration variant
 
 ## Runs
 

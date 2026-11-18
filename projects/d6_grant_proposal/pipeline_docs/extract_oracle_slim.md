@@ -1,6 +1,6 @@
 # extract_oracle_slim
 
-**Source:** `src/co_scientist/d6_grant_proposal/extract_oracle_slim.py` (~100 lines)
+**Source:** `experiments/d6_grant_proposal/extract_oracle_slim.py` (~100 lines)
 **Stage:** Extract (one-time per goal, after `extract_oracle`)
 
 ## Purpose
@@ -31,7 +31,7 @@ Standard library only (`json`, `pathlib`).
 ## Run
 
 ```bash
-PYTHONPATH=src python -m co_scientist.d6_grant_proposal.extract_oracle_slim \
+PYTHONPATH=src python experiments/d6_grant_proposal/extract_oracle_slim.py \
     goal_domain=ai goal_name=02_foundational_rl
 ```
 

@@ -98,7 +98,7 @@ For paper-faithful canonical algorithms, see `CANONICAL_NAMING_REFERENCE.md`.
 
 ### 2026_04_29_mu_v7_opd_smoke
 
-- **Trainer**: `src/co_scientist/d5_abstract_retrieve_refine/train_mu_v7_opd.py`
+- **Trainer**: `experiments/d5_abstract_retrieve_refine/train_mu_v7_opd.py`
 - **Algorithm (truthful)**: D5 in-house on-policy IS-loss (closest to OPSD sampled-token policy-gradient, Zhao 2601.18734 Table 3)
   - Sample: STUDENT on-policy under `student_input = goal + oracle (no critique)`
   - Logprob signal: `teacher_lp = compute_logprobs(teacher_input + student_seq_tokens)` where `teacher_input = goal + oracle + prev_critique`
