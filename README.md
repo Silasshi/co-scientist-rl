@@ -9,7 +9,7 @@ Author: Yuhong (Silas) Shi, Torr Vision Group, University of Oxford.
 | Policy | Qwen3-30B-A3B (MoE), LoRA rank 64, trained through the [Tinker](https://thinkingmachines.ai/tinker/) API |
 | Task / data | Research-plan generation on `facebook/research-plan-gen` (ML split; not redistributed) |
 | **Reproduction** | Held-out rubric score **0.560 → 0.693** (640 goals × 8 samples, identical protocol before and after) |
-| Scale of work | ~170 trainer / eval modules, 6 research directions, 80+ training runs, 120 unit tests |
+| Scale of work | ~170 trainer / eval modules, 6 research directions, 80+ training runs, 161 unit tests |
 
 ## Skills demonstrated
 
