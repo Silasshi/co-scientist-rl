@@ -23,6 +23,7 @@ v1 batched plans by method, and the judge gave identical scores to whole batches
 - The audit judge never sees the privileged source paper that the critic sees, so the evaluation cannot leak training-time information.
 
 ## What the protocols caught
+- **Position bias is real at this scale.** With one contrastive-ranking prompt, Qwen3-30B picked the same position 100% of the time, which ruled it out as a same-model pairwise judge ([`grant_proposal/DECISIONS.md` L39](../../projects/grant_proposal/DECISIONS.md#L39)). The Opus pairwise judge's A-position win rate stayed balanced, at 4 / 8 ([`D5 DECISIONS.md` L134](../../projects/d5_abstract_retrieve_refine/DECISIONS.md#L134)).
 - **A retraction.** A 7–1 pairwise "strong" headline for an inference-time pipeline fell to **4–4** once the plans were regenerated with a bug fix and judged again with the same protocol. It was retracted ([`D5 DECISIONS.md`, 2026-04-27 PM](../../projects/d5_abstract_retrieve_refine/DECISIONS.md)).
 - **A falsified pre-registered claim.** "The v8 variant beats on-policy OPD" lost 3–5 pairwise. It was recorded as falsified rather than quietly dropped.
 - **A reversed ranking.** The D3 training reward ranked plans against Opus within a saturated score band (see [multi-signal reward](03-multi-signal-vector-reward.md)).

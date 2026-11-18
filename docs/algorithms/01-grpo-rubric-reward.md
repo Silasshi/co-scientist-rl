@@ -22,7 +22,7 @@ Engineering details that mattered:
 - Degenerate or format-violating samples are dropped instead of being given a penalty. Without this, malformed plans that happened to score well inflated training reward to 0.84 with no gain on eval ([`reward_shaping.md`](../../projects/rubric_reward/knowledge/methods/reward_shaping.md)).
 
 ## Why the graded scale
-The paper's binary per-item reward ("no violations" → 1) gave a flat curve at Goel's learning rate: 0.103 → 0.095 over 60 batches (run [`22(6)`](../../projects/rubric_reward/runs/2026_01/baseline_exploration/22(6)/summary.md), `metrics.jsonl`). Recomputing from that run's raw training logs (not included here):
+The paper's binary per-item reward ("no violations" → 1) gave a flat curve at Goel's learning rate: 0.103 → 0.095 over 60 batches (run [`22(6)`](../../projects/rubric_reward/runs/2026_01/baseline_exploration/22%286%29/summary.md), `metrics.jsonl`). Recomputing from that run's raw training logs (not included here):
 - 60–75% of samples per batch score exactly 0.
 - In 28.5% of GRPO groups every sample has the same reward, so those groups give no gradient.
 

@@ -1,6 +1,8 @@
 # Evolving rubrics: generate, grade, filter by variance (GER-CR)
 
-**Motivation:** a fixed rubric saturates. Once every plan in a group passes an item, that item carries no gradient. The fix tried here is to keep generating *new* rubric items that discriminate between the current rollouts, and to keep only the items that still vary. This relates to the online, contrastive rubric generation in OnlineRubrics ([arXiv:2510.07284](https://arxiv.org/abs/2510.07284)) and to reference-anchored grading in Prometheus 2 ([arXiv:2405.01535](https://arxiv.org/abs/2405.01535)).
+**Motivation:** a fixed rubric saturates. Once every plan in a group passes an item, that item carries no gradient. The fix tried here is to keep generating *new* rubric items that discriminate between the current rollouts, and to keep only the items that still vary. The generator prompt ([`shared/rubric_gen_prompt.py` L8–L12](../../src/co_scientist/shared/rubric_gen_prompt.py#L8)) borrows from two papers:
+- the discriminative-power criteria in DR Tulu's evolving rubrics ([arXiv:2511.19399](https://arxiv.org/abs/2511.19399), App. A.1)
+- the pairwise-contrast elicitation in OnlineRubrics ([arXiv:2510.07284](https://arxiv.org/abs/2510.07284), Fig. 2)
 
 ## Components
 | Component | Role | Code |
