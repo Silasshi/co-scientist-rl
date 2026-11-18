@@ -1,0 +1,1 @@
+{"iter": 5, "ref_aggregate": 0.875, "buffer_stats": {"n": 7, "n_positive": 5, "n_negative": 2, "mean_std": 0.3165857672290106, "min_std": 0.0, "max_std": 0.4841229182759271}, "per_item_grade": {"4a3519411e70": 1.0, "5e093ae499b2": 0.0, "92ade0baa415": 1.0, "772aad30217a": 1.0, "aca443acaef4": 1.0, "1126bc180f54": 1.0, "69862a656ffa": 1.0}}

@@ -1,0 +1,10 @@
+name,opus_total_20,math_5,novelty_5,realism_5,rigor_5,source
+MAIN_v9,9,2.0,2.0,3.0,2.0,projects/ttt_discover/analysis/cr_v9_signal_hardening_analysis.ipynb cell 6
+B4_v9,9,2.0,2.0,3.0,2.0,same
+B4_stripped,6,2.0,1.0,2.0,1.0,same
+MAIN_v8.1,7,,,,,same (aggregate only; from opus_judge_report_v7.md)
+B4_v8.1,8,,,,,same
+MAIN_fresh_bon1,10,3.0,2.0,3.0,2.0,projects/ttt_discover/DECISIONS.md L15 + STATUS.md L35
+B4_bon1,8,2.0,2.0,2.0,2.0,projects/ttt_discover/DECISIONS.md L16 + STATUS.md
+MAIN_fresh_bon2,9,2.0,2.0,3.0,2.0,projects/ttt_discover/STATUS.md
+reference,20,5.0,5.0,5.0,5.0,"expert reference plan, same judge"

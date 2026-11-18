@@ -1,0 +1,4 @@
+name,source,description,iterations
+smoke_no_rl,projects/grant_proposal_v2/runs/2026_04_23_ger_cr_v1_smoke,"6 iterations, rubric evolution on, no weight updates (mechanism check)",10
+dryrun_rl_coupled,projects/grant_proposal_v2/runs/2026_04_24_ger_cr_v1_phase3_dryrun,"3 iterations, evolved rubric coupled into the RL advantage",3
+smoke_rl_coupled,projects/grant_proposal_v2/runs/2026_04_24_ger_cr_v1_phase3_smoke,"10 iterations, evolved rubric coupled into the RL advantage",10

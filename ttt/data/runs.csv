@@ -1,0 +1,9 @@
+name,source,description,iterations
+MAIN_v9,projects/ttt_discover/runs/2026_04_18_v9_signal_hardening/MAIN_v9,"critique-revise + per-signal RL, v9 signals, best-of-2",25
+B4_v9,projects/ttt_discover/runs/2026_04_18_v9_signal_hardening/B4_v9,"same loop, no RL update (in-context critique-revise only)",25
+B4_stripped,projects/ttt_discover/runs/2026_04_18_v9_signal_hardening/B4_stripped,no RL and per-signal critiques stripped from the revision prompt,25
+MAIN_fresh_bon1,projects/ttt_discover/runs/2026_04_18_v9_fresh_bon1/MAIN_fresh_bon1,"RL also on fresh plans with entropic weights (train_on_fresh), best-of-1",25
+B4_bon1,projects/ttt_discover/runs/2026_04_18_v9_fresh_bon1/B4_bon1,"no RL, best-of-1",25
+MAIN_fresh_bon2,projects/ttt_discover/runs/2026_04_18_v9_fresh_bon1/MAIN_fresh_bon2,"RL on fresh + revisions, best-of-2",25
+MAIN_v8.1,projects/ttt_discover/runs/2026_04_30b_paper_experiments_v81/MAIN_v7_per_signal,"RL, previous v8.1 signal set (before hardening)",25
+B4_v8.1,projects/ttt_discover/runs/2026_04_30b_paper_experiments_v81/B4_v7_per_signal,"no RL, previous v8.1 signal set",25

@@ -1,0 +1,8 @@
+name,run_id,description,files
+binary_reward,2026_01__baseline_exploration__22(6),"Goel-faithful strict binary reward, lr 1e-6, 60 batches",3
+graded_reward,2026_01__dense_score__success_dense_score,"first 4-level graded-reward run, 190 batches",3
+grpo_main,"2026_02__withA1,A2__2(ml)","headline GRPO run (graded reward + A1/A2 sample filtering), 215 batches, ML split",12
+grpo_arxiv,"2026_02__withA1,A2__3(arxiv)",same recipe on the arXiv split,6
+grpo_pubmed,"2026_02__withA1,A2__3(pubmed)",same recipe on the PubMed split,6
+base_bon,2026_03__eval_bon_base_model,best-of-N eval of the untrained base model,2
+gpt54_zeroshot,2026_04__eval_sota__gpt54,"GPT-5.4 zero-shot, same grader",2

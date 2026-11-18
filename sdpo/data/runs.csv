@@ -1,0 +1,4 @@
+name,run_id,description,files
+sdpo,2026_02__SDPO__27(rich),"SDPO (grader-feedback self-teacher mixed with GRPO), 107 batches",6
+grpo_control,2026_02__SDPO__27(rich)(sanity check),"same SDPO code path with distillation disabled (GRPO-only control), 107 batches",6
+sdpo_warmstart,2026_02__SDPO__28_recovery_A_warmstart_best214,SDPO warm-started from the GRPO main run checkpoint b214,6
