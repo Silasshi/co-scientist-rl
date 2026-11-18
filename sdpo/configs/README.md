@@ -1,0 +1,1 @@
+Saved run configs for `sdpo` and `grpo_control`. These logged configs contain only the run-level fields (model, lr, batch, group size, LoRA rank). The SDPO-specific settings (`use_sdpo`, mixing weight λ) were not saved. The control was run with `use_sdpo=false`; the λ used for `sdpo` is not recorded (code default 0.30).

@@ -1,0 +1,1 @@
+The configs saved by the headline runs (`grpo_main` = data run `grpo_main`, `binary_reward` = data run `binary_reward`). They record the run-level fields the trainer logged at the time. Fields absent here take the defaults in [`../train.py`](../train.py) `Config`.
