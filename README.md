@@ -1,61 +1,132 @@
-# co-scientist-rl
+<div align="center">
 
-**RL post-training of a 30B LLM to write research plans.**
+# Training LLMs for Scientific Research Planning
 
-I reproduced the rubric-reward GRPO recipe of Goel et al. ([arXiv:2512.23707](https://arxiv.org/abs/2512.23707)) on Qwen3-30B-A3B. Besides GRPO, I also implemented evolving rubrics (DR Tulu), self-distillation (SDPO), and test-time training with an entropic objective and UCB-based buffer reuse (TTT-Discover).
+[![Task](https://img.shields.io/badge/task-ResearchPlanGen%20(arXiv%3A2512.23707)-b31b1b.svg)](https://arxiv.org/abs/2512.23707)
+[![Dataset](https://img.shields.io/badge/%F0%9F%A4%97%20dataset-facebook%2Fresearch--plan--gen-yellow.svg)](https://huggingface.co/datasets/facebook/research-plan-gen)
+[![License](https://img.shields.io/badge/license-Apache--2.0-blue.svg)](LICENSE)
 
-Each method folder contains:
-- the implementation
-- the experiment data (numeric, in the repo)
-- an analysis: figures, results and takeaways, with a script that re-derives every quoted number from the data
+**Yuhong Shi** · Torr Vision Group, University of Oxford · Dec 2025 – Apr 2026
 
-Author: Yuhong (Silas) Shi, Torr Vision Group, University of Oxford (Dec 2025 – Apr 2026).
+</div>
 
-| | Method | Follows | Main result | Takeaway |
-|---|---|---|---|---|
-| [**`grpo/`**](grpo/) | GRPO with an LLM-judge rubric reward | Goel et al. 2025; DeepSeekMath | Held-out rubric score **0.560 → 0.693** (640 goals × 8) | A binary rubric reward gives no gradient (29% of groups had zero variance), so a graded scale is required. The remaining gap is selection: best-of-8 reaches 0.849, but the model cannot pick it (ρ = 0.06) |
-| [**`evolving_rubric/`**](evolving_rubric/) | Rubrics regenerated from current rollouts, variance-filtered, coupled into RL | DR Tulu (Shao et al. 2025) | Mechanism runs (≤ 10 iterations): 9 evolved items, 6 of them naming concrete reward-gaming behaviours | A rising rubric pass rate is mostly *composition* (0.20 → 0.60 overall, 0.31 → 0.34 on a fixed item set), so evaluate on a fixed item set. No training-effect claim |
-| [**`sdpo/`**](sdpo/) | Self-distillation: the model conditioned on grader feedback is its own teacher | SDPO (Hübotter et al. 2026) | Ahead of a same-script GRPO control for 80/107 batches (peak 0.607 vs 0.591), then collapses; final eval 0.552 vs 0.607 | Self-distillation speeds up early learning but is unstable late; select checkpoints on validation |
-| [**`ttt/`**](ttt/) | Per-goal test-time training: UCB buffer reuse, critique–revise, entropic weights | TTT-Discover (Yuksekgonul et al. 2026) | Critique conditioning **+0.19**; RL adds +0.09 at best-of-1 and nothing at best-of-2 (single runs) | Most of the gain comes from critique, not RL. Validate the grader first: the old signal set scored 0.975 while the independent judge gave 7–8 / 20 |
+RL post-training of Qwen3-30B-A3B to write research plans, scored by rubrics.
+- GRPO: a reproduction of the paper's recipe.
+- Three extensions: evolving rubrics, self-distillation, and test-time training.
 
-All training runs: Qwen3-30B-A3B (MoE), LoRA rank 64, trained through the [Tinker](https://thinkingmachines.ai/tinker/) API. Evaluation details and caveats are in each folder's README. Single runs and single-judge scores are flagged where they occur.
+Each method has its own folder with code, experiment data and an analysis.
 
-## Repository layout
+<p align="center"><img src="assets/overview.png" width="900"></p>
+
+- **Motivation.** Research plans have no verifiable reward, so we use rubrics to make this open-ended task trainable, following the [ResearchPlanGen](https://arxiv.org/abs/2512.23707) dataset.
+- **Method.**
+  - I reproduced their results without released code by refining the rubric reward into a continuous score.
+  - Besides GRPO, I also implemented:
+    - evolving rubrics ([DR Tulu](https://arxiv.org/abs/2511.19399))
+    - self-distillation from grader feedback ([SDPO](https://arxiv.org/abs/2601.20802))
+    - test-time training that reuses past attempts ([TTT-Discover](https://arxiv.org/abs/2601.16175))
+- **Finding.**
+  - None of these methods brought a clear improvement over the reproduction.
+  - In our experiments, the rubric reward was easily hacked and too coarse to convey deep scientific content.
+  - So the policy mainly learned format and pattern preferences.
+
+## Results
+| Folder | Method (follows) | Against the GRPO reproduction | Evidence that the reward is hacked or too coarse |
+|---|---|---|---|
+| [`grpo/`](grpo/) | GRPO with a continuous rubric score ([Goel et al.](https://arxiv.org/abs/2512.23707)) | **The reproduction.** Held-out score 0.560 → **0.693** (+23.7%). The paper reports 12–22% under a different evaluator | Format-valid samples 76% → 100%, and length moved to the length-bonus centre. Opus judges 13 trained-checkpoint plans at 6–11 / 20; the top-rubric plan (0.949) gets 7 |
+| [`evolving_rubric/`](evolving_rubric/) | Rubrics regenerated from current rollouts ([DR Tulu](https://arxiv.org/abs/2511.19399)) | Not shown: mechanism runs only (≤ 10 iterations). The pass-rate rise 0.20 → 0.60 is composition (0.31 → 0.34 on a fixed item set) | 6 of 9 evolved items name gaming behaviours the fixed reward misses, e.g. "gratuitous formalism", "invented metric without derivation" |
+| [`sdpo/`](sdpo/) | Self-distillation from grader feedback ([SDPO](https://arxiv.org/abs/2601.20802)) | Worse: 0.552, against 0.607 for a same-script GRPO control. Warm-started from the reproduction: 0.682 < 0.693 | Ahead of the control for 80 of 107 batches (peak 0.607 vs 0.591), then collapses |
+| [`ttt/`](ttt/) | Test-time training that reuses past attempts ([TTT-Discover](https://arxiv.org/abs/2601.16175)) | RL = no RL at best-of-2 (0.950 both). The best-of-1 gap (0.928 vs 0.840) is one run, and the mean sample does not move | The training grader gives 0.95–0.975 while Opus gives 6–10 / 20, against 20 for the reference plan |
+
+- Every number in the READMEs is recomputed from the folder's `data/` by `analysis/check_numbers.py`.
+- Runs are single seeds.
+- Opus scores are single judgments.
+
+## Repository structure
 ```
-grpo/  sdpo/  ttt/  evolving_rubric/     one folder per method:
-    <code>.py                          implementation (importable package; python -m <method>.<module>)
-    configs/ or data/runs/*/config.json   configs of the reported runs
-    data/                              experiment data + data/README.md (protocol, what is excluded)
-    analysis/make_figures.py           regenerates analysis/figures/*.png from data/
-    analysis/check_numbers.py          re-derives every number in the README from data/
-    tests/                             unit tests (no network)
-common/                                shared: Tinker client profiles, hard-gate reward, grant reward, analysis helpers
-READING.md                             the papers behind each method and how each was used
+grpo/  sdpo/  ttt/  evolving_rubric/   one folder per method
+├── README.md                          method → code (with line links) → run → results → takeaways → data → limitations
+├── *.py                               implementation (python -m <method>.<module>)
+├── configs/ or data/runs/*/config.json   configs of the reported runs
+├── data/                              experiment data (numeric only)
+├── analysis/                          make_figures.py, check_numbers.py, figures/
+└── tests/                             unit tests (no network)
+common/                                Tinker client profiles, shared reward code, analysis helpers
+assets/                                README figure (python -m common.overview_figure)
 ```
 
-## Setup
+## Installation
 ```bash
-pip install -r requirements.txt
-export TINKER_API_KEY=...        # only needed to train; or CO_SCIENTIST_API_KEY_<NAME> + api_profile=<name>
+git clone https://github.com/Silasshi/co-scientist-rl && cd co-scientist-rl
+pip install -e .            # enough to check every number and redraw every figure
+pip install -e ".[train]"   # + Tinker, tinker-cookbook, torch: training and unit tests
+export TINKER_API_KEY=...   # training only; or CO_SCIENTIST_API_KEY_<NAME> with api_profile=<name>
 ```
-Training needs a Tinker account. The dataset `facebook/research-plan-gen` is loaded from Hugging Face; the grant-proposal goals for `evolving_rubric/` must be supplied by you (see its `data/README.md`).
+- Training runs through the [Tinker](https://thinkingmachines.ai/tinker/) API, using Qwen3-30B-A3B with LoRA rank 64.
+- The ResearchPlanGen dataset is loaded from Hugging Face.
+- The grant-proposal goals used by `evolving_rubric/` are not included (see its [Data](evolving_rubric/README.md#data) section).
 
-## Check the results without an account
+## Quick start
+Check the results, no account needed:
 ```bash
-pytest                                            # 151 unit tests
 for m in grpo sdpo ttt evolving_rubric; do
-  python -m $m.analysis.check_numbers             # every README number, recomputed from data/
-  python -m $m.analysis.make_figures              # every figure, regenerated from data/
+  python -m $m.analysis.check_numbers     # re-derive every README number from data/
+  python -m $m.analysis.make_figures      # redraw every figure from data/
 done
+pytest                                    # unit tests (needs the [train] extra)
+```
+Train:
+```bash
+python -m grpo.train log_path=runs/grpo/main
+python -m sdpo.train log_path=runs/sdpo/main
+python -m ttt.train config.log_path=runs/ttt/main config.train_on_fresh=true
+python -m evolving_rubric.train_ger_cr config.goal_dir=evolving_rubric/data/goals/<your_goal> \
+    config.rubric_evolution_enabled=true config.rubric_rl_coupling_enabled=true
+```
+
+## Acknowledgments
+- The training loops are adapted from [tinker-cookbook](https://github.com/thinking-machines-lab/tinker-cookbook) (Apache-2.0); each derived file says so in its first line.
+- Training ran on [Tinker](https://thinkingmachines.ai/tinker/).
+- The task, dataset and rubric-reward method are from Goel et al. (2025).
+
+## References
+```bibtex
+@article{goel2025training,
+  title   = {Training AI Co-Scientists Using Rubric Rewards},
+  author  = {Goel, Shashwat and Hazra, Rishi and Jayalath, Dulhan and others},
+  journal = {arXiv preprint arXiv:2512.23707},
+  year    = {2025}
+}
+@article{shao2025drtulu,
+  title   = {DR Tulu: Reinforcement Learning with Evolving Rubrics for Deep Research},
+  author  = {Shao, Rulin and Asai, Akari and Shen, Shannon Zejiang and others},
+  journal = {arXiv preprint arXiv:2511.19399},
+  year    = {2025}
+}
+@article{hubotter2026sdpo,
+  title   = {Reinforcement Learning via Self-Distillation},
+  author  = {H{\"u}botter, Jonas and L{\"u}beck, Frederike and Behric, Lejs and others},
+  journal = {arXiv preprint arXiv:2601.20802},
+  year    = {2026}
+}
+@article{yuksekgonul2026discover,
+  title   = {Learning to Discover at Test Time},
+  author  = {Yuksekgonul, Mert and Koceja, Daniel and Li, Xinhao and others},
+  journal = {arXiv preprint arXiv:2601.16175},
+  year    = {2026}
+}
+@article{shao2024deepseekmath,
+  title   = {DeepSeekMath: Pushing the Limits of Mathematical Reasoning in Open Language Models},
+  author  = {Shao, Zhihong and Wang, Peiyi and Zhu, Qihao and others},
+  journal = {arXiv preprint arXiv:2402.03300},
+  year    = {2024}
+}
 ```
 
 ## History
-This repository first held the full research project: six directions, 168 modules, decision logs and run summaries. It now focuses on the four methods above.
-- The complete project is preserved on the [`archive`](https://github.com/Silasshi/co-scientist-rl/tree/archive) branch.
-- The original snapshot is preserved at the [`v0-snapshot`](https://github.com/Silasshi/co-scientist-rl/tree/v0-snapshot) tag.
+The full research project, including the directions not shown here, decision logs and run summaries, is preserved in two places:
+- the [`archive`](https://github.com/Silasshi/co-scientist-rl/tree/archive) branch
+- the [`v0-snapshot`](https://github.com/Silasshi/co-scientist-rl/tree/v0-snapshot) tag
 
-## Not included
-Model checkpoints, generated plans and grader outputs (text), the dataset, paper drafts, and API credentials.
-
-## License and attribution
-Apache-2.0 ([`LICENSE`](LICENSE)). The training loop is adapted from [tinker-cookbook](https://github.com/thinking-machines-lab/tinker-cookbook) (Apache-2.0); see [`NOTICE`](NOTICE) and `THIRD_PARTY_NOTICES/`. The task and rubric-reward method follow Goel et al. (2025).
+## License
+[Apache-2.0](LICENSE)
