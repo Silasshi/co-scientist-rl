@@ -1,3 +1,4 @@
+# Adapted from tinker-cookbook (https://github.com/thinking-machines-lab/tinker-cookbook, Apache-2.0), recipes/rl_loop.py; modified.
 """Signal-Targeted Critique-Revise trainer for grant proposal generation.
 
 Forked from ttt_discover/train_critique_revise.py for D4 (grant_proposal).

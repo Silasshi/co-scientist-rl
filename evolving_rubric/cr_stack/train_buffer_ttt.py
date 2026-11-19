@@ -1,3 +1,4 @@
+# Adapted from tinker-cookbook (https://github.com/thinking-machines-lab/tinker-cookbook, Apache-2.0), recipes/rl_loop.py; modified.
 """Buffer-conditioned training framework for grant proposal generation.
 
 Forked from ttt_discover/train_buffer_ttt.py for D4 (grant_proposal).

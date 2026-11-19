@@ -1,3 +1,4 @@
+# Adapted from tinker-cookbook (https://github.com/thinking-machines-lab/tinker-cookbook, Apache-2.0), recipes/rl_loop.py; modified.
 """Signal-Targeted Critique-Revise trainer.
 
 Evolves from train_buffer_ttt.py by adding a critique-revise phase that

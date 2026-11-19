@@ -1,0 +1,43 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "co-scientist-rl"
+version = "0.1.0"
+description = "Training LLMs for scientific research planning: GRPO with rubric rewards, evolving rubrics, self-distillation, test-time training"
+readme = "README.md"
+license = { text = "Apache-2.0" }
+requires-python = ">=3.11"
+authors = [{ name = "Yuhong Shi" }]
+# Enough to re-check every number and regenerate every figure from data/.
+dependencies = [
+    "numpy>=2.0",
+    "pandas>=2.2",
+    "pyarrow>=15",
+    "matplotlib>=3.8",
+    "scipy>=1.12",
+]
+
+[project.optional-dependencies]
+# Versions used for the reported runs (Feb-Apr 2026, Python 3.13). Training needs a Tinker account.
+# The unit tests also pass with tinker 0.22.3, tinker-cookbook 0.3.0 and transformers 5.3.0.
+train = [
+    "tinker==0.7.0",
+    "tinker-cookbook @ git+https://github.com/thinking-machines-lab/tinker-cookbook.git@00c858949db5e2c7287fc2a8402accea94d7b5b6",
+    "chz==0.4.0",
+    "torch==2.9.1",
+    "transformers==4.56.2",
+    "datasets==4.4.2",
+    "pytest>=8",
+]
+
+[tool.setuptools.packages.find]
+include = ["common*", "grpo*", "sdpo*", "ttt*", "evolving_rubric*"]
+
+[tool.setuptools.package-data]
+"*" = ["*.json", "*.jsonl", "*.csv", "*.parquet", "*.txt", "*.md"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["common", "grpo", "sdpo", "ttt", "evolving_rubric"]

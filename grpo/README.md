@@ -10,11 +10,11 @@
 
 | Step | Code |
 |---|---|
-| Grader XML → rubric score | [`train.py` L228 `compute_rubric_reward_from_xml`](train.py#L228) |
-| Reward = rubric + 0.08 · length bonus − format penalty | [`train.py` L638](train.py#L638) |
-| Group-relative advantage `r − mean(group)` | [`train.py` L696](train.py#L696) |
-| PPO-clip loss (ε = 0.2, no KL) via Tinker | [`train.py` L803](train.py#L803) |
-| Best-of-N + rubric-blind self-selection eval | [`eval_bon.py` L103, L202](eval_bon.py#L202) |
+| Grader XML → rubric score | [`train.py` L229 `compute_rubric_reward_from_xml`](train.py#L229) |
+| Reward = rubric + 0.08 · length bonus − format penalty | [`train.py` L639](train.py#L639) |
+| Group-relative advantage `r − mean(group)` | [`train.py` L697](train.py#L697) |
+| PPO-clip loss (ε = 0.2, no KL) via Tinker | [`train.py` L804](train.py#L804) |
+| Best-of-N + rubric-blind self-selection eval | [`eval_bon.py` L104, L203](eval_bon.py#L203) |
 
 ## Run
 ```bash

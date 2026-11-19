@@ -1,3 +1,4 @@
+# Adapted from tinker-cookbook (https://github.com/thinking-machines-lab/tinker-cookbook, Apache-2.0), recipes/rl_loop.py; modified.
 """Buffer-conditioned Test-Time Training trainer (train_buffer_ttt).
 
 Implements a per-goal optimization loop following the TTT-Discover paper

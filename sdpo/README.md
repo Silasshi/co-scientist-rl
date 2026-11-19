@@ -12,12 +12,12 @@ Here this distillation signal is mixed with the GRPO advantage from [`grpo/`](..
 
 | Step | Code |
 |---|---|
-| Parse grader XML into per-plan weaknesses / fixes | [`train.py` L1488](train.py#L1488) |
-| Build the self-teacher prompt (original prompt + feedback) | [`train.py` L1688](train.py#L1688) |
-| Teacher regularised toward the initial policy (SDPO appendix) | [`train.py` L2363](train.py#L2363) |
-| Per-token advantage `teacher_lp − student_lp`, solution tokens only, clipped to ±5 | [`train.py` L3495](train.py#L3495) |
-| Mix `λ·A_GRPO + (1−λ)·A_SDPO` (code default λ = 0.30) | [`train.py` L3530](train.py#L3530) |
-| Same script with `use_sdpo=False` → GRPO-only control | [`train.py` L210](train.py#L210) |
+| Parse grader XML into per-plan weaknesses / fixes | [`train.py` L1489](train.py#L1489) |
+| Build the self-teacher prompt (original prompt + feedback) | [`train.py` L1689](train.py#L1689) |
+| Teacher regularised toward the initial policy (SDPO appendix) | [`train.py` L2364](train.py#L2364) |
+| Per-token advantage `teacher_lp − student_lp`, solution tokens only, clipped to ±5 | [`train.py` L3496](train.py#L3496) |
+| Mix `λ·A_GRPO + (1−λ)·A_SDPO` (code default λ = 0.30) | [`train.py` L3531](train.py#L3531) |
+| Same script with `use_sdpo=False` → GRPO-only control | [`train.py` L211](train.py#L211) |
 
 **Variant (code only): [`external_critic/`](external_critic/).** This is on-policy self-distillation where the privileged context is a critique written by an *external* reviewer (Claude Opus). The reviewer sees the reference proposal; the teacher is still the policy itself.
 - It uses a PPO-clip loss on the solution-masked `Δlog p`, see [`external_critic/train.py` L425–L508](external_critic/train.py#L425).

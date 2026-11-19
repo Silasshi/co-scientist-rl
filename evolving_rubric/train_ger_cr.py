@@ -1,3 +1,4 @@
+# Adapted from tinker-cookbook (https://github.com/thinking-machines-lab/tinker-cookbook, Apache-2.0), recipes/rl_loop.py; modified.
 """GER-CR-v1: Grant-proposal CR-v7 + evolving-rubric (R_active) loop.
 
 Forked from `train_cr_v7.py`. All CR-v7 behaviour is preserved (hard gates,

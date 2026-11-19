@@ -1,3 +1,4 @@
+# Adapted from tinker-cookbook (https://github.com/thinking-machines-lab/tinker-cookbook, Apache-2.0), recipes/rl_loop.py; modified.
 """CR-v7: Per-signal context REINFORCE trainer (standalone).
 
 Extracted from `train_critique_revise.py` 2026-04-17 for clarity. This

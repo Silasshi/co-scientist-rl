@@ -11,7 +11,7 @@ A fixed rubric saturates: once every rollout passes an item, the item carries no
 2. **Generate.** A rubric model (Claude, via a pluggable `GenClient`) writes positive items (*what makes the better plan better*) and negative items (*failure modes to avoid*) grounded in the observed difference. The prompt is in [`rubric_gen_prompt.py`](rubric_gen_prompt.py); the step itself is [`rubric_evolution.py` L83](rubric_evolution.py#L83).
 3. **Grade.** Each rollout is checked against each item with a short yes/no call ([`rubric_grader.py` L41](rubric_grader.py#L41)).
 4. **Filter.** Items whose grades have zero variance are dropped, and the buffer is capped at the top K items by standard deviation, as in DR Tulu ([`rubric_buffer.py` L143](rubric_buffer.py#L143)).
-5. **Couple into RL.** The evolving rubric (R_active) acts as an extra signal in the per-signal REINFORCE of the critique–revise loop. A revision's advantage is how much it raised the R_active pass rate over its parent ([`train_ger_cr.py` L1611](train_ger_cr.py#L1611)). This is controlled by `rubric_rl_coupling_enabled`.
+5. **Couple into RL.** The evolving rubric (R_active) acts as an extra signal in the per-signal REINFORCE of the critique–revise loop. A revision's advantage is how much it raised the R_active pass rate over its parent ([`train_ger_cr.py` L1612](train_ger_cr.py#L1612)). This is controlled by `rubric_rl_coupling_enabled`.
 
 Unlike DR Tulu, items are not grounded in web search, and the rubric enters as one signal next to a fixed 12-signal reward rather than as the whole reward.
 

@@ -4,14 +4,14 @@
 
 ## Method
 Each iteration of [`train.py`](train.py) (the CR-v7 loop) has four phases:
-1. **Reuse a buffer of past attempts.** Parents are chosen from the buffer with UCB: `reward + c·sqrt(ln N / (1 + n_selected))` ([`train_critique_revise.py` L296](train_critique_revise.py#L296), called at [`train.py` L500](train.py#L500)).
-2. **Critique–revise.** For each parent, find its weakest signal ([`train_critique_revise.py` L323](train_critique_revise.py#L323)) and generate a revision aimed at it. New fresh plans are also sampled.
+1. **Reuse a buffer of past attempts.** Parents are chosen from the buffer with UCB: `reward + c·sqrt(ln N / (1 + n_selected))` ([`train_critique_revise.py` L297](train_critique_revise.py#L297), called at [`train.py` L501](train.py#L501)).
+2. **Critique–revise.** For each parent, find its weakest signal ([`train_critique_revise.py` L324](train_critique_revise.py#L324)) and generate a revision aimed at it. New fresh plans are also sampled.
 3. **Score** every plan with a 10-signal, goal-agnostic reward:
    - weights at [`rewards/ten_signal_reward.py` L856](rewards/ten_signal_reward.py#L856)
    - hard gates for goal contrast and programmatic claim checks at [`../common/seven_signal_reward.py` L98](../common/seven_signal_reward.py#L98)
 4. **Update.**
-   - Revisions get a per-signal REINFORCE advantage (improvement on the targeted signal) ([`train.py` L742](train.py#L742)).
-   - With `config.train_on_fresh=true`, fresh plans get **entropic weights** `softmax(β·R)`, which favour the best samples rather than the mean ([`train.py` L710](train.py#L710)). β is set adaptively by binary search to hit a KL budget ([`train_entropic.py` L527–L552](train_entropic.py#L527)).
+   - Revisions get a per-signal REINFORCE advantage (improvement on the targeted signal) ([`train.py` L743](train.py#L743)).
+   - With `config.train_on_fresh=true`, fresh plans get **entropic weights** `softmax(β·R)`, which favour the best samples rather than the mean ([`train.py` L711](train.py#L711)). β is set adaptively by binary search to hit a KL budget ([`train_entropic.py` L528–L553](train_entropic.py#L528)).
 
 Ablations switch parts off: `config.skip_rl_update=true` gives in-context critique–revise only ("B4"); `config.strip_critiques=true` removes the per-signal critique from the revision prompt.
 
