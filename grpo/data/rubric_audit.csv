@@ -1,0 +1,14 @@
+audit_set,source,sample_idx,rubric_score,opus_math,opus_novelty,opus_realism,opus_rigor,opus_total
+same_goal,"grpo_main held-out eval, checkpoint b214: the 8 samples of one goal (group 29)",0,0.4857,2,2,2,2,8
+same_goal,"grpo_main held-out eval, checkpoint b214: the 8 samples of one goal (group 29)",1,0.04,3,2,2,2,9
+same_goal,"grpo_main held-out eval, checkpoint b214: the 8 samples of one goal (group 29)",2,0.7314,2,2,2,2,8
+same_goal,"grpo_main held-out eval, checkpoint b214: the 8 samples of one goal (group 29)",3,0.2,3,2,2,2,9
+same_goal,"grpo_main held-out eval, checkpoint b214: the 8 samples of one goal (group 29)",4,0.9829,3,3,2,2,10
+same_goal,"grpo_main held-out eval, checkpoint b214: the 8 samples of one goal (group 29)",5,0.1686,1,2,2,2,7
+same_goal,"grpo_main held-out eval, checkpoint b214: the 8 samples of one goal (group 29)",6,0.8457,3,3,3,2,11
+same_goal,"grpo_main held-out eval, checkpoint b214: the 8 samples of one goal (group 29)",7,0.0714,2,2,2,2,8
+mixed_goals,"grpo_main held-out eval, checkpoint b214: 5 samples with group index 2 from different eval batches (4 goals; samples 5 and 6 share one)",1,0.6,1,1,2,2,6
+mixed_goals,"grpo_main held-out eval, checkpoint b214: 5 samples with group index 2 from different eval batches (4 goals; samples 5 and 6 share one)",4,0.3143,2,3,2,2,9
+mixed_goals,"grpo_main held-out eval, checkpoint b214: 5 samples with group index 2 from different eval batches (4 goals; samples 5 and 6 share one)",5,0.7571,2,1,1,2,6
+mixed_goals,"grpo_main held-out eval, checkpoint b214: 5 samples with group index 2 from different eval batches (4 goals; samples 5 and 6 share one)",6,0.8343,2,2,3,3,10
+mixed_goals,"grpo_main held-out eval, checkpoint b214: 5 samples with group index 2 from different eval batches (4 goals; samples 5 and 6 share one)",7,0.9486,2,2,1,2,7

@@ -13,12 +13,12 @@ style()
 # 1. training reward: binary vs graded
 fig, ax = plt.subplots(figsize=(6.4, 3.4))
 for name, label in [("binary_reward", "binary reward (Goel et al. rule)"),
-                    ("graded_reward", "4-level graded reward"),
-                    ("grpo_main", "graded + sample filtering (main run)")]:
+                    ("graded_reward", "continuous rubric score (ours)"),
+                    ("grpo_main", "continuous score + sample filtering (main run)")]:
     m = pd.read_csv(D / f"train_metrics/{name}.csv")
     ax.plot(m["progress/batch"], m["reward/total"].rolling(5, min_periods=1).mean(), label=label)
 ax.set(xlabel="training batch (64 goals x 8 samples)", ylabel="training reward (5-batch mean)",
-       title="Binary rubric reward gives no learning signal; graded reward trains")
+       title="Binary rubric reward gives no learning signal; a continuous score trains")
 ax.legend(frameon=False, fontsize=8)
 save(fig, F / "training_curves.png")
 
@@ -45,3 +45,27 @@ ax.axhline(rows[3][1], color="#6c757d", ls=":", label="reference plans")
 ax.set(xlabel="N samples per goal", ylabel="rubric score", title="The policy writes good plans but cannot pick them")
 ax.legend(frameon=False, fontsize=8)
 save(fig, F / "selection_gap.png")
+
+# 4. what training changed besides the rubric score: length moves to the shaped target, format errors vanish
+m = pd.read_csv(D / "train_metrics/grpo_main.batch_summary.csv")
+fig, ax = plt.subplots(figsize=(6.4, 3.2))
+ax.plot(m.batch_idx, m.length_mean.rolling(5, min_periods=1).mean(), label="mean plan length (words)")
+ax.axhline(600, color="#6c757d", ls=":", label="centre of the length bonus (600 words)")
+ax.set(xlabel="training batch", ylabel="words", title="The policy learns the length shaping and the output format")
+ax2 = ax.twinx()
+ax2.plot(m.batch_idx, m.format_rate.rolling(5, min_periods=1).mean(), color="#d1495b", label="mean format penalty")
+ax2.set_ylabel("format penalty", color="#d1495b"); ax2.grid(False); ax2.spines["right"].set_visible(True)
+h1, l1 = ax.get_legend_handles_labels(); h2, l2 = ax2.get_legend_handles_labels()
+ax.legend(h1 + h2, l1 + l2, frameon=False, fontsize=8, loc="upper right")
+save(fig, F / "length_format.png")
+
+# 5. rubric score vs an independent depth audit (Claude Opus, blind, /20)
+a = pd.read_csv(D / "rubric_audit.csv")
+fig, ax = plt.subplots(figsize=(5.6, 3.6))
+for aset, mk, label in [("same_goal", "o", "8 samples, one goal"), ("mixed_goals", "s", "5 samples, different goals")]:
+    s = a[a.audit_set == aset]
+    ax.scatter(s.rubric_score, s.opus_total, marker=mk, s=46, label=label, alpha=0.85)
+ax.set(xlabel="rubric score (training grader)", ylabel="Opus depth audit (/20)", xlim=(-0.03, 1.03), ylim=(4, 20),
+       title="High rubric scores do not mean deep plans")
+ax.legend(frameon=False, fontsize=8, loc="upper left")
+save(fig, F / "rubric_vs_opus.png")
