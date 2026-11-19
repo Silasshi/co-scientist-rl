@@ -20,7 +20,7 @@ Unlike DR Tulu, items are not grounded in web search, and the rubric enters as o
 python -m evolving_rubric.train_ger_cr config.goal_dir=evolving_rubric/data/goals/<your_goal> \
     config.rubric_evolution_enabled=true config.rubric_rl_coupling_enabled=true
 ```
-You supply the goal text: see [`data/README.md`](data/README.md). Rubric generation runs through a file bus that an LLM worker answers (request and response JSON under `log_path`).
+You supply the goal text: see [Data](#data). Rubric generation runs through a file bus that an LLM worker answers (request and response JSON under `log_path`).
 
 ## What the runs show
 These numbers come from the 10-iteration RL-coupled run `smoke_rl_coupled` (8 rollouts graded per item per iteration), recomputed from [`data/`](data/) by [`analysis/check_numbers.py`](analysis/check_numbers.py).
@@ -29,6 +29,13 @@ These numbers come from the 10-iteration RL-coupled run `smoke_rl_coupled` (8 ro
 ![composition](analysis/figures/composition_effect.png)
 
 ## Takeaways
+**Verdict: no improvement shown.**
+- The short runs exercise the mechanism, but nothing was trained long enough to compare against the GRPO reproduction.
+- The one number that rises, the rubric pass rate, turns out to be a composition effect (point 3).
+- What the runs do show is *how* the fixed reward gets hacked.
+
+The details:
+
 1. **The generator targets real Goodhart modes.**
    - 6 of the 9 evolved items are *negative* items naming specific gaming behaviours seen in the rollouts, such as:
      - "Avoids gratuitous formalism not binding research steps"
@@ -43,6 +50,25 @@ These numbers come from the 10-iteration RL-coupled run `smoke_rl_coupled` (8 ro
    - Positive items stayed hard (0.29 at iteration 9). Negative items pass 0.71 on average.
    - Most of the rise comes from adding easier, mostly negative items. Any evaluation of evolving rubrics has to hold the item set fixed.
 4. **Deduplication by exact title is too weak.** In `smoke_no_rl`, "Avoids Decorative Equations Not Bound to (the) Method" was added twice. Matching should be semantic.
+
+## Data
+| Path | Contents |
+|---|---|
+| [`data/runs.csv`](data/runs.csv) | the three runs and how they differ |
+| `data/runs/<run>/rubric_buffer.jsonl` | **the evolved rubric items**: title, description, positive or negative, weight, creation iteration, and the per-iteration binary grades of every rollout on that item |
+| `data/runs/<run>/rubric_anchor_log.jsonl` | drift diagnostic: the reference proposal graded against the active rubric |
+| `data/runs/<run>/metrics.csv`, `iter_summary.csv`, `config.json` | per-iteration training metrics (`r_active/*` once the rubric is coupled into RL) and the exact config |
+| [`data/pilot/RESULTS_SUMMARY.md`](data/pilot/RESULTS_SUMMARY.md) | offline pilot: 3 contrast pairs → 9 generated items, checked against pre-set success criteria |
+| `data/goals/01_foundopt/weights.json` | signal weights for the goal used |
+
+`smoke_no_rl` was resumed mid-run, so its `metrics.csv` repeats some `iter` values.
+
+**Not included:**
+- the goal text and distractor goals, whose provenance is not ours to republish
+- the reference proposal
+- plan buffers
+
+To run the trainer, place your own `research_goal.md` in `data/goals/<name>/`. Optionally add `alt_goals.json` = `{"alt_goals": [{"goal": ..., "target": ...}]}`.
 
 ## Limitations
 - Short runs on one goal, one run per setting.

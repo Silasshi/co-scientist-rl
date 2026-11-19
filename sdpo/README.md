@@ -19,10 +19,6 @@ Here this distillation signal is mixed with the GRPO advantage from [`grpo/`](..
 | Mix `λ·A_GRPO + (1−λ)·A_SDPO` (code default λ = 0.30) | [`train.py` L3531](train.py#L3531) |
 | Same script with `use_sdpo=False` → GRPO-only control | [`train.py` L211](train.py#L211) |
 
-**Variant (code only): [`external_critic/`](external_critic/).** This is on-policy self-distillation where the privileged context is a critique written by an *external* reviewer (Claude Opus). The reviewer sees the reference proposal; the teacher is still the policy itself.
-- It uses a PPO-clip loss on the solution-masked `Δlog p`, see [`external_critic/train.py` L425–L508](external_critic/train.py#L425).
-- It is implemented and unit-tested, but was **never trained**, so there is no result for it.
-
 ## Run
 ```bash
 python -m sdpo.train log_path=runs/sdpo/main                  # SDPO
@@ -44,6 +40,12 @@ For reference, the GRPO main run scores 0.693 ([`grpo/`](../grpo/)).
 ![eval](analysis/figures/eval_comparison.png)
 
 ## Takeaways
+**Verdict against the GRPO reproduction: no clear improvement.**
+- The final SDPO checkpoint scores 0.552, below both the same-script control (0.607) and the reproduction (0.693).
+- Warm-starting SDPO from the reproduction does not beat it either.
+
+The details:
+
 1. **Self-distillation helps early, then collapses.**
    - SDPO's training reward is above the GRPO-only control for 80 of 107 batches.
    - It peaks at 0.607 (batch 68), higher than the control ever gets (0.591).
@@ -59,6 +61,12 @@ For reference, the GRPO main run scores 0.693 ([`grpo/`](../grpo/)).
 - The spread of the SDPO advantage shrinks over training (std 0.73 → 0.40), so the GRPO term may dominate late. This is consistent with the curve but not established.
 
 **Practical implication:** with self-distillation, select checkpoints on a validation set rather than taking the last one. No checkpoint near batch 68 was evaluated, so whether it would have beaten the control is unknown.
+
+## Data
+- Same format and protocol as [`grpo/`](../grpo/README.md#data), with one CSV, parquet and summary set per run.
+- Run names map to the original run ids in [`data/runs.csv`](data/runs.csv).
+- `configs/*.json` hold the run-level fields the trainer saved: model, lr, batch, group size and LoRA rank.
+- The SDPO-specific settings were not saved. The control was run with `use_sdpo=false`.
 
 ## Limitations
 - One seed per arm.
